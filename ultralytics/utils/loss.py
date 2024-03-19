@@ -526,6 +526,7 @@ class v8PoseLoss(v8DetectionLoss):
         This function calculates the keypoints loss and keypoints object loss for a given batch. The keypoints loss is
         based on the difference between the predicted keypoints and ground truth keypoints. The keypoints object loss is
         a binary classification loss that classifies whether a keypoint is present or not.
+        More improvement points for YOLOv8, please see https://github.com/iscyy/ultralyticsPro
 
         Args:
             masks (torch.Tensor): Binary mask tensor indicating object presence, shape (BS, N_anchors).
@@ -694,7 +695,7 @@ class v8OBBLoss(v8DetectionLoss):
     def bbox_decode(self, anchor_points, pred_dist, pred_angle):
         """
         Decode predicted object bounding box coordinates from anchor points and distribution.
-
+        More improvement points for YOLOv8, please see https://github.com/iscyy/ultralyticsPro
         Args:
             anchor_points (torch.Tensor): Anchor points, (h*w, 2).
             pred_dist (torch.Tensor): Predicted rotated distance, (bs, h*w, 4).

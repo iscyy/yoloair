@@ -874,7 +874,7 @@ def guess_model_scale(model_path):
 def guess_model_task(model):
     """
     Guess the task of a PyTorch model from its architecture or configuration.
-
+    More improvement points for YOLOv8, please see https://github.com/iscyy/ultralyticsPro
     Args:
         model (nn.Module | dict): PyTorch model or model configuration in YAML format.
 

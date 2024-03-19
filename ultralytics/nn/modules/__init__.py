@@ -66,12 +66,9 @@ from .transformer import (
     TransformerLayer,
 )
 
-from .CoreV8.Backbone.emo import (
-    C3_RMB, CSRMBC, C2f_RMB, CPNRMB, ReNLANRMB
-)
-from .CoreV8.Backbone.biformer import (
-    CSCBiF, ReNLANBiF, CPNBiF, C3_Biformer, C2f_Biformer
-)
+from .CoreV8.Backbone.emo import C3_RMB, CSRMBC, C2f_RMB, CPNRMB, ReNLANRMB
+from .CoreV8.Backbone.biformer import CSCBiF, ReNLANBiF, CPNBiF, C3_Biformer, C2f_Biformer
+from .CoreV8.Backbone.CFNet import CSCFocalNeXt, ReNLANFocalNeXt, CPNFocalNeXt, C3_FocalNeXt, C2f_FocalNeXt
 
 __all__ = (
     "Conv",
@@ -87,6 +84,11 @@ __all__ = (
     "CPNBiF",
     "C3_Biformer",
     "C2f_Biformer",
+    "CSCFocalNeXt",
+    "ReNLANFocalNeXt",
+    "CPNFocalNeXt",
+    "C3_FocalNeXt",
+    "C2f_FocalNeXt",
     #------------------
     "LightConv",
     "RepConv",

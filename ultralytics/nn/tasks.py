@@ -51,6 +51,7 @@ from ultralytics.nn.modules import (
 from ultralytics.nn.modules import CPNGhost, CSCGhost, ReNLANGhost, C3_Ghost, C2f_Ghost
 
 from ultralytics.nn.modules import RepVGGBlock, SimConv, RepBlock, Transpose
+from ultralytics.nn.modules import CReToNeXt
 
 
 from ultralytics.utils import DEFAULT_CFG_DICT, DEFAULT_CFG_KEYS, LOGGER, colorstr, emojis, yaml_load
@@ -855,6 +856,15 @@ def parse_model(d, ch, verbose=True):  # model_dict, input_channels(3)
             if m in [RepBlock]:
                 args.insert(2, n)  # number of repeats
                 n = 1
+        elif m in [CReToNeXt]:
+            c1, c2 = ch[f], args[0]
+            if c2 != nc:  # if c2 not equal to number of classes (i.e. for Classify() output)
+                c2 = make_divisible(min(c2, max_channels) * width, 8)
+            args = [c1, c2, *args[1:]]
+            if m in [CReToNeXt]:
+                args.insert(2, n)  # number of repeats
+                n = 1
+
         # 新增模块======================
         elif m is nn.BatchNorm2d:
             args = [ch[f]]

@@ -66,9 +66,20 @@ from .transformer import (
     TransformerLayer,
 )
 
+from .CoreV8.Backbone.emo import (
+    C3_RMB, CSRMBC, C2f_RMB, CPNRMB, ReNLANRMB
+)
+
 __all__ = (
     "Conv",
     "Conv2",
+    #------------------
+    "C3_RMB",
+    "CSRMBC",
+    "C2f_RMB",
+    "CPNRMB",
+    "ReNLANRMB",
+    #------------------
     "LightConv",
     "RepConv",
     "DWConv",

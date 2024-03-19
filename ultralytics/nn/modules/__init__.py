@@ -69,6 +69,9 @@ from .transformer import (
 from .CoreV8.Backbone.emo import (
     C3_RMB, CSRMBC, C2f_RMB, CPNRMB, ReNLANRMB
 )
+from .CoreV8.Backbone.biformer import (
+    CSCBiF, ReNLANBiF, CPNBiF, C3_Biformer, C2f_Biformer
+)
 
 __all__ = (
     "Conv",
@@ -79,6 +82,11 @@ __all__ = (
     "C2f_RMB",
     "CPNRMB",
     "ReNLANRMB",
+    "CSCBiF",
+    "ReNLANBiF",
+    "CPNBiF",
+    "C3_Biformer",
+    "C2f_Biformer",
     #------------------
     "LightConv",
     "RepConv",

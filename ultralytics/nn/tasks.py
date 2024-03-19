@@ -43,6 +43,9 @@ from ultralytics.nn.modules import (
 )
 
 from ultralytics.nn.modules import C3_RMB, CSRMBC, C2f_RMB, CPNRMB, ReNLANRMB
+from ultralytics.nn.modules import (
+    CSCBiF, ReNLANBiF, CPNBiF, C3_Biformer, C2f_Biformer
+)
 
 from ultralytics.utils import DEFAULT_CFG_DICT, DEFAULT_CFG_KEYS, LOGGER, colorstr, emojis, yaml_load
 from ultralytics.utils.checks import check_requirements, check_suffix, check_yaml
@@ -804,6 +807,14 @@ def parse_model(d, ch, verbose=True):  # model_dict, input_channels(3)
                 c2 = make_divisible(min(c2, max_channels) * width, 8)
             args = [c1, c2, *args[1:]]
             if m in [C3_RMB, CSRMBC, C2f_RMB, CPNRMB]:
+                args.insert(2, n)  # number of repeats
+                n = 1
+        elif m in [CSCBiF, ReNLANBiF, CPNBiF, C3_Biformer, C2f_Biformer]:
+            c1, c2 = ch[f], args[0]
+            if c2 != nc:  # if not output
+                c2 = make_divisible(min(c2, max_channels) * width, 8)
+            args = [c1, c2, *args[1:]]
+            if m in [CSCBiF, CPNBiF, C3_Biformer, C2f_Biformer]:
                 args.insert(2, n)  # number of repeats
                 n = 1
         # 新增模块======================

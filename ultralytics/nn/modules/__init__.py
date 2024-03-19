@@ -70,31 +70,17 @@ from .CoreV8.Backbone.emo import C3_RMB, CSRMBC, C2f_RMB, CPNRMB, ReNLANRMB
 from .CoreV8.Backbone.biformer import CSCBiF, ReNLANBiF, CPNBiF, C3_Biformer, C2f_Biformer
 from .CoreV8.Backbone.CFNet import CSCFocalNeXt, ReNLANFocalNeXt, CPNFocalNeXt, C3_FocalNeXt, C2f_FocalNeXt
 from .CoreV8.Backbone.FasterNet import FasterNeXt, CSCFasterNeXt, ReNLANFasterNeXt, C3_FasterNeXt, C2f_FasterNeXt
+from .CoreV8.Backbone.Ghost import CPNGhost, CSCGhost, ReNLANGhost, C3_Ghost, C2f_Ghost
 
 __all__ = (
     "Conv",
     "Conv2",
     #------------------
-    "C3_RMB",
-    "CSRMBC",
-    "C2f_RMB",
-    "CPNRMB",
-    "ReNLANRMB",
-    "CSCBiF",
-    "ReNLANBiF",
-    "CPNBiF",
-    "C3_Biformer",
-    "C2f_Biformer",
-    "CSCFocalNeXt",
-    "ReNLANFocalNeXt",
-    "CPNFocalNeXt",
-    "C3_FocalNeXt",
-    "C2f_FocalNeXt",
-    "CSCFasterNeXt",
-    "ReNLANFasterNeXt",
-    "FasterNeXt",
-    "C3_FasterNeXt",
-    "C2f_FasterNeXt",
+    "C3_RMB", "CSRMBC", "C2f_RMB", "CPNRMB", "ReNLANRMB",
+    "CSCBiF", "ReNLANBiF", "CPNBiF", "C3_Biformer", "C2f_Biformer",
+    "CSCFocalNeXt", "ReNLANFocalNeXt", "CPNFocalNeXt", "C3_FocalNeXt", "C2f_FocalNeXt",
+    "CSCFasterNeXt", "ReNLANFasterNeXt", "FasterNeXt", "C3_FasterNeXt", "C2f_FasterNeXt",
+    "CPNGhost", "CSCGhost", "ReNLANGhost", "C3_Ghost", "C2f_Ghost",
     #------------------
     "LightConv",
     "RepConv",

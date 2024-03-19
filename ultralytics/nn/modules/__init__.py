@@ -73,6 +73,7 @@ from .CoreV8.Backbone.FasterNet import FasterNeXt, CSCFasterNeXt, ReNLANFasterNe
 from .CoreV8.Backbone.Ghost import CPNGhost, CSCGhost, ReNLANGhost, C3_Ghost, C2f_Ghost
 from .CoreV8.Backbone.EfficientRep import RepVGGBlock, SimConv, RepBlock, Transpose
 from .CoreV8.Backbone.damo import CReToNeXt
+from .CoreV8.Backbone.QARep import QARep, CSCQARep, ReNLANQARep, C3_QARep, C2f_QARep
 
 
 __all__ = (
@@ -85,6 +86,7 @@ __all__ = (
     "CSCFasterNeXt", "ReNLANFasterNeXt", "FasterNeXt", "C3_FasterNeXt", "C2f_FasterNeXt",
     "CPNGhost", "CSCGhost", "ReNLANGhost", "C3_Ghost", "C2f_Ghost",
     "RepVGGBlock", "SimConv", "RepBlock", "Transpose","CReToNeXt",
+    "QARep", "CSCQARep", "ReNLANQARep", "C3_QARep", "C2f_QARep",
     #------------------
     "LightConv",
     "RepConv",

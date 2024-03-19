@@ -75,7 +75,7 @@ from .CoreV8.Backbone.EfficientRep import RepVGGBlock, SimConv, RepBlock, Transp
 from .CoreV8.Backbone.damo import CReToNeXt
 from .CoreV8.Backbone.QARep import QARep, CSCQARep, ReNLANQARep, C3_QARep, C2f_QARep
 from .CoreV8.Backbone.ConvNeXtv2 import CPNConvNeXtv2, CSCConvNeXtv2, ReNLANConvNeXtv2, C3_ConvNeXtv2, C2f_ConvNeXtv2
-
+from .CoreV8.Backbone.MobileViTv1 import CPNMobileViTB, CSCMobileViTB, ReNLANMobileViTB, C3_MobileViTB, C2f_MobileViTB
 
 
 __all__ = (
@@ -88,8 +88,10 @@ __all__ = (
     "CSCFasterNeXt", "ReNLANFasterNeXt", "FasterNeXt", "C3_FasterNeXt", "C2f_FasterNeXt",
     "CPNGhost", "CSCGhost", "ReNLANGhost", "C3_Ghost", "C2f_Ghost",
     "RepVGGBlock", "SimConv", "RepBlock", "Transpose","CReToNeXt",
+    "CPNMobileViTB", "CSCMobileViTB", "ReNLANMobileViTB", "C3_MobileViTB", "C2f_MobileViTB",
     "QARep", "CSCQARep", "ReNLANQARep", "C3_QARep", "C2f_QARep",
     "CPNConvNeXtv2", "CSCConvNeXtv2", "ReNLANConvNeXtv2", "C3_ConvNeXtv2", "C2f_ConvNeXtv2",
+    
     #------------------
     "LightConv",
     "RepConv",

@@ -71,6 +71,7 @@ from .CoreV8.Backbone.biformer import CSCBiF, ReNLANBiF, CPNBiF, C3_Biformer, C2
 from .CoreV8.Backbone.CFNet import CSCFocalNeXt, ReNLANFocalNeXt, CPNFocalNeXt, C3_FocalNeXt, C2f_FocalNeXt
 from .CoreV8.Backbone.FasterNet import FasterNeXt, CSCFasterNeXt, ReNLANFasterNeXt, C3_FasterNeXt, C2f_FasterNeXt
 from .CoreV8.Backbone.Ghost import CPNGhost, CSCGhost, ReNLANGhost, C3_Ghost, C2f_Ghost
+from .CoreV8.Backbone.EfficientRep import RepVGGBlock, SimConv, RepBlock, Transpose
 
 __all__ = (
     "Conv",
@@ -81,6 +82,7 @@ __all__ = (
     "CSCFocalNeXt", "ReNLANFocalNeXt", "CPNFocalNeXt", "C3_FocalNeXt", "C2f_FocalNeXt",
     "CSCFasterNeXt", "ReNLANFasterNeXt", "FasterNeXt", "C3_FasterNeXt", "C2f_FasterNeXt",
     "CPNGhost", "CSCGhost", "ReNLANGhost", "C3_Ghost", "C2f_Ghost",
+    "RepVGGBlock", "SimConv", "RepBlock", "Transpose",
     #------------------
     "LightConv",
     "RepConv",

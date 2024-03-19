@@ -74,6 +74,8 @@ from .CoreV8.Backbone.Ghost import CPNGhost, CSCGhost, ReNLANGhost, C3_Ghost, C2
 from .CoreV8.Backbone.EfficientRep import RepVGGBlock, SimConv, RepBlock, Transpose
 from .CoreV8.Backbone.damo import CReToNeXt
 from .CoreV8.Backbone.QARep import QARep, CSCQARep, ReNLANQARep, C3_QARep, C2f_QARep
+from .CoreV8.Backbone.ConvNeXtv2 import CPNConvNeXtv2, CSCConvNeXtv2, ReNLANConvNeXtv2, C3_ConvNeXtv2, C2f_ConvNeXtv2
+
 
 
 __all__ = (
@@ -87,6 +89,7 @@ __all__ = (
     "CPNGhost", "CSCGhost", "ReNLANGhost", "C3_Ghost", "C2f_Ghost",
     "RepVGGBlock", "SimConv", "RepBlock", "Transpose","CReToNeXt",
     "QARep", "CSCQARep", "ReNLANQARep", "C3_QARep", "C2f_QARep",
+    "CPNConvNeXtv2", "CSCConvNeXtv2", "ReNLANConvNeXtv2", "C3_ConvNeXtv2", "C2f_ConvNeXtv2",
     #------------------
     "LightConv",
     "RepConv",

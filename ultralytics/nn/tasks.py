@@ -54,6 +54,7 @@ from ultralytics.nn.modules import RepVGGBlock, SimConv, RepBlock, Transpose
 from ultralytics.nn.modules import CReToNeXt
 
 from ultralytics.nn.modules import QARep, CSCQARep, ReNLANQARep, C3_QARep, C2f_QARep
+from ultralytics.nn.modules import CPNConvNeXtv2, CSCConvNeXtv2, ReNLANConvNeXtv2, C3_ConvNeXtv2, C2f_ConvNeXtv2
 
 
 from ultralytics.utils import DEFAULT_CFG_DICT, DEFAULT_CFG_KEYS, LOGGER, colorstr, emojis, yaml_load
@@ -872,6 +873,14 @@ def parse_model(d, ch, verbose=True):  # model_dict, input_channels(3)
                 c2 = make_divisible(min(c2, max_channels) * width, 8)
             args = [c1, c2, *args[1:]]
             if m in [QARep, CSCQARep, C3_QARep, C2f_QARep]:
+                args.insert(2, n)  # number of repeats
+                n = 1
+        elif m in [CPNConvNeXtv2, CSCConvNeXtv2, ReNLANConvNeXtv2, C3_ConvNeXtv2, C2f_ConvNeXtv2]:
+            c1, c2 = ch[f], args[0]
+            if c2 != nc:  # if not output
+                c2 = make_divisible(min(c2, max_channels) * width, 8)
+            args = [c1, c2, *args[1:]]
+            if m in [CPNConvNeXtv2, CSCConvNeXtv2, C3_ConvNeXtv2, C2f_ConvNeXtv2]:
                 args.insert(2, n)  # number of repeats
                 n = 1
         # 新增模块======================

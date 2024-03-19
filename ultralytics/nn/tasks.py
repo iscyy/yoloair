@@ -42,6 +42,10 @@ from ultralytics.nn.modules import (
     Segment,
 )
 
+'''
+导入的改进点核心代码模块见ultralytics\nn\modules\CoreV8\Backbone下面的文件夹
+'''
+
 from ultralytics.nn.modules import C3_RMB, CSRMBC, C2f_RMB, CPNRMB, ReNLANRMB
 from ultralytics.nn.modules import CSCBiF, ReNLANBiF, CPNBiF, C3_Biformer, C2f_Biformer
 from ultralytics.nn.modules import CSCFocalNeXt, ReNLANFocalNeXt, CPNFocalNeXt, C3_FocalNeXt, C2f_FocalNeXt
@@ -56,7 +60,7 @@ from ultralytics.nn.modules import CPNMobileViTB, CSCMobileViTB, ReNLANMobileViT
 
 from ultralytics.nn.modules import QARep, CSCQARep, ReNLANQARep, C3_QARep, C2f_QARep
 from ultralytics.nn.modules import CPNConvNeXtv2, CSCConvNeXtv2, ReNLANConvNeXtv2, C3_ConvNeXtv2, C2f_ConvNeXtv2
-
+from ultralytics.nn.modules import CPNMVBv2, CSCMVBv2, ReNLANMVBv2, C3_MVBv2, C2f_MVBv2
 
 from ultralytics.utils import DEFAULT_CFG_DICT, DEFAULT_CFG_KEYS, LOGGER, colorstr, emojis, yaml_load
 from ultralytics.utils.checks import check_requirements, check_suffix, check_yaml
@@ -890,6 +894,14 @@ def parse_model(d, ch, verbose=True):  # model_dict, input_channels(3)
                 c2 = make_divisible(min(c2, max_channels) * width, 8)
             args = [c1, c2, *args[1:]]
             if m in [CPNMobileViTB, CSCMobileViTB, C3_MobileViTB, C2f_MobileViTB]:
+                args.insert(2, n)  # number of repeats
+                n = 1
+        elif m in [CPNMVBv2, CSCMVBv2, ReNLANMVBv2, C3_MVBv2, C2f_MVBv2]:
+            c1, c2 = ch[f], args[0]
+            if c2 != nc:  # if not output
+                c2 = make_divisible(min(c2, max_channels) * width, 8)
+            args = [c1, c2, *args[1:]]
+            if m in [CPNMVBv2, CSCMVBv2, C3_MVBv2, C2f_MVBv2]:
                 args.insert(2, n)  # number of repeats
                 n = 1
         # 新增模块======================

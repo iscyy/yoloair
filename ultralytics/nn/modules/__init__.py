@@ -66,6 +66,10 @@ from .transformer import (
     TransformerLayer,
 )
 
+'''
+导入的改进点核心代码模块见ultralytics\nn\modules\CoreV8\Backbone下面的文件夹
+'''
+
 from .CoreV8.Backbone.emo import C3_RMB, CSRMBC, C2f_RMB, CPNRMB, ReNLANRMB
 from .CoreV8.Backbone.biformer import CSCBiF, ReNLANBiF, CPNBiF, C3_Biformer, C2f_Biformer
 from .CoreV8.Backbone.CFNet import CSCFocalNeXt, ReNLANFocalNeXt, CPNFocalNeXt, C3_FocalNeXt, C2f_FocalNeXt
@@ -76,7 +80,7 @@ from .CoreV8.Backbone.damo import CReToNeXt
 from .CoreV8.Backbone.QARep import QARep, CSCQARep, ReNLANQARep, C3_QARep, C2f_QARep
 from .CoreV8.Backbone.ConvNeXtv2 import CPNConvNeXtv2, CSCConvNeXtv2, ReNLANConvNeXtv2, C3_ConvNeXtv2, C2f_ConvNeXtv2
 from .CoreV8.Backbone.MobileViTv1 import CPNMobileViTB, CSCMobileViTB, ReNLANMobileViTB, C3_MobileViTB, C2f_MobileViTB
-
+from .CoreV8.Backbone.MobileViTv2 import CPNMVBv2, CSCMVBv2, ReNLANMVBv2, C3_MVBv2, C2f_MVBv2
 
 __all__ = (
     "Conv",
@@ -91,7 +95,7 @@ __all__ = (
     "CPNMobileViTB", "CSCMobileViTB", "ReNLANMobileViTB", "C3_MobileViTB", "C2f_MobileViTB",
     "QARep", "CSCQARep", "ReNLANQARep", "C3_QARep", "C2f_QARep",
     "CPNConvNeXtv2", "CSCConvNeXtv2", "ReNLANConvNeXtv2", "C3_ConvNeXtv2", "C2f_ConvNeXtv2",
-    
+    "CPNMVBv2", "CSCMVBv2", "ReNLANMVBv2", "C3_MVBv2", "C2f_MVBv2",
     #------------------
     "LightConv",
     "RepConv",

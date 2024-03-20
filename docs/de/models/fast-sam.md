@@ -7,7 +7,7 @@ keywords: FastSAM, maschinelles Lernen, CNN-basierte Lösung, Objektsegmentierun
 # Fast Segment Anything Model (FastSAM)
 
 Das Fast Segment Anything Model (FastSAM) ist eine neuartige, Echtzeit-CNN-basierte Lösung für die Segment Anything Aufgabe. Diese Aufgabe zielt darauf ab, jedes Objekt in einem Bild auf Basis verschiedener möglicher Benutzerinteraktionen zu segmentieren. FastSAM reduziert signifikant den Rechenbedarf, während es eine wettbewerbsfähige Leistung beibehält und somit für eine Vielzahl von Vision-Aufgaben praktisch einsetzbar ist.
-
+ss
 ![Übersicht über die Architektur des Fast Segment Anything Model (FastSAM)](https://user-images.githubusercontent.com/26833433/248551984-d98f0f6d-7535-45d0-b380-2e1440b52ad7.jpg)
 
 ## Überblick

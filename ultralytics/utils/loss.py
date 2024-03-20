@@ -18,9 +18,12 @@ from .NewLoss.ioulossone import bbox_shape_iou, bbox_mpdiou, bbox_inner_multi_io
 # repulsionloss函数核心代码见ultralytics\utils\NewLoss\repulsionloss.py文件
 from .NewLoss.repulsionloss import repulsionloss
 
-# gwdloss函数核心代码见ultralytics\utils\NewLoss\gwdloss.py文件,详细代码在该文件中
+# gwdloss函数核心代码见ultralytics\utils\NewLoss\gwdloss.py文件, 详细代码在该文件中
 from .NewLoss.gwdloss import gwdloss
 
+
+# kldloss函数核心代码见ultralytics\utils\NewLoss\kldloss.py文件, 详细代码在该文件中
+from .NewLoss.kldloss import kldloss
 
 from .tal import bbox2dist
 
@@ -123,6 +126,11 @@ class BboxLoss(nn.Module):
         
         # 新增gwdloss损失函数
         iou = gwdloss(
+            pred_bboxes, target_bboxes, fg_mask, gwd=1.0) # GWD Loss
+        
+
+        # 新增kldloss损失函数,核心代码详情在https://github.com/iscyy/ultralyticsPro/ultralytics/utils/NewLoss/kldloss.py文件
+        iou = kldloss(
             pred_bboxes, target_bboxes, fg_mask, gwd=1.0) # GWD Loss
 
 

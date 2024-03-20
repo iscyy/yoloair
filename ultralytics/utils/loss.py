@@ -107,18 +107,18 @@ class BboxLoss(nn.Module):
         # iou = bbox_mp_iou(pred_bboxes[fg_mask], target_bboxes[fg_mask], xywh=False, MPDIoU=True)
         '''
             Inner-IoU 改进各类Loss 可以结合多种进行使用, 已经更新如下超过10+种
-            Inner_GIoU
-            Inner_DIoU
-            Inner_CIoU
-            Inner_EIoU
-            Inner_SIoU
-            Inner_WIoU
             Focal_Inner_GIoU
             Focal_Inner_DIoU
             Focal_Inner_CIoU
             Focal_Inner_EIoU
             Focal_Inner_SIoU
             Focal_Inner_WIoU
+            Inner_GIoU
+            Inner_DIoU
+            Inner_CIoU
+            Inner_EIoU
+            Inner_SIoU
+            Inner_WIoU
             替换参数即可
         '''
         iou = bbox_inner_multi_iou(pred_bboxes[fg_mask], target_bboxes[fg_mask], Inner_SIoU=True, FocalLoss_='Focal_Inner_GIoU')

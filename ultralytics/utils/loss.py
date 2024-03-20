@@ -15,9 +15,11 @@ from .NewLoss.iouloss import bbox_multi_iou, bbox_focal_multi_iou
 # bbox_shape_iou, bbox_mpdiou, bbox_inner_multi_iou, bbox_piou, nwdiou, bbox_effciou, bbox_xiou函数核心代码见ultralytics\utils\NewLoss\ioulossone.py文件
 from .NewLoss.ioulossone import bbox_shape_iou, bbox_mpdiou, bbox_inner_multi_iou, bbox_piou, nwdiou, bbox_effciou, bbox_xiou
 
-# repulsionloss函数核心代码见ultralytics\utils\NewLoss\ioulossone.py文件
+# repulsionloss函数核心代码见ultralytics\utils\NewLoss\repulsionloss.py文件
 from .NewLoss.repulsionloss import repulsionloss
 
+# gwdloss函数核心代码见ultralytics\utils\NewLoss\gwdloss.py文件,详细代码在该文件中
+from .NewLoss.gwdloss import gwdloss
 
 
 from .tal import bbox2dist
@@ -118,6 +120,10 @@ class BboxLoss(nn.Module):
         # 新增repulsionloss损失函数，均为改进版本
         iou = repulsionloss(
             pred_bboxes, target_bboxes, fg_mask)
+        
+        # 新增gwdloss损失函数
+        iou = gwdloss(
+            pred_bboxes, target_bboxes, fg_mask, gwd=1.0) # GWD Loss
 
 
         loss_iou = ((1.0 - iou) * weight).sum() / target_scores_sum

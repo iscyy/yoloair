@@ -167,3 +167,4 @@ pnnx*
 ultralytics/nn/modules/CoreV8
 /ultralytics/utils/NewLoss
 /ultralytics/utils/NewLA
+/docs

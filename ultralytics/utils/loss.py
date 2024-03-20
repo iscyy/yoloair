@@ -9,6 +9,14 @@ from ultralytics.utils.ops import crop_mask, xywh2xyxy, xyxy2xywh
 from ultralytics.utils.tal import RotatedTaskAlignedAssigner, TaskAlignedAssigner, dist2bbox, dist2rbox, make_anchors
 
 from .metrics import bbox_iou, probiou
+
+'''
+    bbox_multi_iou、bbox_focal_multi_iou函数核心代码见ultralytics\utils\NewLoss\iouloss.py文件
+
+    bbox_multi_iou函数包含: CIoU、DIoU、EIoU、GIoU、SIoU、WIoU损失函数
+    bbox_focal_multi_iou函数包含: FocalCIoU、FocalDIoU、FocalEIoU、FocalGIoU、FocalSIoU、FocalWIoU损失函数
+'''
+from .NewLoss.iouloss import bbox_multi_iou, bbox_focal_multi_iou
 from .tal import bbox2dist
 
 
@@ -75,8 +83,43 @@ class BboxLoss(nn.Module):
     def forward(self, pred_dist, pred_bboxes, anchor_points, target_bboxes, target_scores, target_scores_sum, fg_mask):
         """IoU loss."""
         weight = target_scores.sum(-1)[fg_mask].unsqueeze(-1)
-        iou = bbox_iou(pred_bboxes[fg_mask], target_bboxes[fg_mask], xywh=False, CIoU=True)
+        # origin iou
+        # iou = bbox_iou(pred_bboxes[fg_mask], target_bboxes[fg_mask], xywh=False, CIoU=True)
+        # loss_iou = ((1.0 - iou) * weight).sum() / target_scores_sum
+        
+        '''
+            Loss改进各类Loss：CIoU、DIoU、EIoU、GIoU、SIoU、WIoU
+            
+            support multi iou loss
+            CIoU🚀 (bool, optional): If True, calculate Complete IoU. Defaults to False. origin loss
+            GIoU🚀 (bool, optional): If True, calculate Generalized IoU. Defaults to False.
+            DIoU🚀 (bool, optional): If True, calculate Distance IoU. Defaults to False.
+            EIoU🚀 (bool, optional): If True, calculate Generalized IoU. Defaults to False.
+            SIoU🚀 (bool, optional): If True, calculate Distance IoU. Defaults to False.
+            WIoU🚀 (bool, optional): If True, calculate Complete IoU. Defaults to False.
+
+        '''
+        iou = bbox_multi_iou(pred_bboxes[fg_mask], target_bboxes[fg_mask], xywh=False, CIoU=True)
         loss_iou = ((1.0 - iou) * weight).sum() / target_scores_sum
+        
+        '''
+            WIoU
+        '''
+        # loss, iou = bbox_multi_iou(pred_bboxes[fg_mask], target_bboxes[fg_mask], xywh=False, WIoU=True)
+        # loss_iou = ((1.0 - iou) * weight).sum() / target_scores_sum
+        
+        '''
+            Focal Loss改进各类Loss：FocalCIoU、FocalDIoU、FocalEIoU、FocalGIoU、FocalSIoU、FocalWIoU
+        '''
+        # ========FocalLoss改进版本 + CIoU、DIoU、EIoU、GIoU、SIoU、WIoU组合:FocalCIoU、FocalDIoU、FocalEIoU、FocalGIoU、FocalSIoU、FocalWIoU================
+        # iou = bbox_focal_multi_iou(pred_bboxes[fg_mask], target_bboxes[fg_mask], xywh=False, WIoU=True, FocalLoss_='Focal_WIoU')
+        # if len(iou) >= 2:
+        #     iou_f = iou[1]
+        #     loss_iou = ((iou_f.detach() * (1.0 - iou[0])) * weight).sum() / target_scores_sum
+        # else:
+        #     loss_iou = ((1.0 - iou) * weight).sum() / target_scores_sum  # iou loss
+        # ========================
+        
 
         # DFL loss
         if self.use_dfl:

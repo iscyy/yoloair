@@ -125,18 +125,18 @@ class BboxLoss(nn.Module):
         loss_iou = ((1.0 - iou) * weight).sum() / target_scores_sum
         '''
             FocalerIoU 改进各类Loss 可以结合多种进行使用, 已经更新如下超过10+种
-            Focal_Focaler_GIoU
-            Focal_Focaler_DIoU
-            Focal_Focaler_CIoU
-            Focal_Focaler_EIoU
-            Focal_Focaler_SIoU
-            Focal_Focaler_WIoU
             Focaler_GIoU
             Focaler_DIoU
             Focaler_CIoU
             Focaler_EIoU
             Focaler_SIoU
             Focaler_WIoU
+            Focal_Focaler_GIoU
+            Focal_Focaler_DIoU
+            Focal_Focaler_CIoU
+            Focal_Focaler_EIoU
+            Focal_Focaler_SIoU
+            Focal_Focaler_WIoU
             替换参数即可
         '''
         iou = bbox_multi_iou(pred_bboxes[fg_mask], target_bboxes[fg_mask], Inner_SIoU=True, FocalLoss_='Focal_Inner_GIoU', FocalerIoU=True)

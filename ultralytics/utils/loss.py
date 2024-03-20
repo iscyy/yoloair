@@ -11,14 +11,14 @@ from ultralytics.utils.tal import RotatedTaskAlignedAssigner, TaskAlignedAssigne
 from .metrics import bbox_iou, probiou
 
 from .NewLoss.iouloss import bbox_multi_iou, bbox_focal_multi_iou
-from .NewLoss.ioulossone import bbox_shape_iou, bbox_mpdiou, bbox_inner_multi_iou
+from .NewLoss.ioulossone import bbox_shape_iou, bbox_mpdiou, bbox_inner_multi_iou, bbox_piou
 
 
 # bbox_multi_iou、bbox_focal_multi_iou函数核心代码见ultralytics\utils\NewLoss\iouloss.py文件
 # bbox_multi_iou函数包含: CIoU、DIoU、EIoU、GIoU、SIoU、WIoU损失函数
 # bbox_focal_multi_iou函数包含: FocalCIoU、FocalDIoU、FocalEIoU、FocalGIoU、FocalSIoU、FocalWIoU损失函数
 
-# bbox_shape_iou, bbox_mpdiou, bbox_inner_multi_iou函数核心代码见ultralytics\utils\NewLoss\ioulossone.py文件
+# bbox_shape_iou, bbox_mpdiou, bbox_inner_multi_iou、bbox_piou函数核心代码见ultralytics\utils\NewLoss\ioulossone.py文件
 
 from .tal import bbox2dist
 
@@ -100,19 +100,24 @@ class BboxLoss(nn.Module):
             EIoU🚀 (bool, optional): If True, calculate Generalized IoU. Defaults to False.
             SIoU🚀 (bool, optional): If True, calculate Distance IoU. Defaults to False.
             WIoU🚀 (bool, optional): If True, calculate Complete IoU. Defaults to False.
+            PIoU🚀 (bool, optional): If True, calculate Complete IoU. Defaults to False.
 
         '''
         # iou = bbox_multi_iou(pred_bboxes[fg_mask], target_bboxes[fg_mask], xywh=False, CIoU=True)
         # iou = bbox_shape_iou(pred_bboxes[fg_mask], target_bboxes[fg_mask], xywh=False) # Shape-IoU
         # iou = bbox_mp_iou(pred_bboxes[fg_mask], target_bboxes[fg_mask], xywh=False, MPDIoU=True)
+        iou = bbox_piou(pred_bboxes[fg_mask], target_bboxes[fg_mask], xywh=False, PIoU=True) # 参数可以切换为PIoU和PIoUv2两个版本
+        loss_iou = ((1.0 - iou) * weight).sum() / target_scores_sum
         '''
             Inner-IoU 改进各类Loss 可以结合多种进行使用, 已经更新如下超过10+种
+            Focal_Inner_PIoU/Focal_Inner_PIoUv2
             Focal_Inner_GIoU
             Focal_Inner_DIoU
             Focal_Inner_CIoU
             Focal_Inner_EIoU
             Focal_Inner_SIoU
             Focal_Inner_WIoU
+            Inner_PIoU/Inner_PIoUv2
             Inner_GIoU
             Inner_DIoU
             Inner_CIoU
@@ -121,16 +126,18 @@ class BboxLoss(nn.Module):
             Inner_WIoU
             替换参数即可
         '''
-        iou = bbox_inner_multi_iou(pred_bboxes[fg_mask], target_bboxes[fg_mask], Inner_SIoU=True, FocalLoss_='Focal_Inner_GIoU')
-        loss_iou = ((1.0 - iou) * weight).sum() / target_scores_sum
+        # iou = bbox_inner_multi_iou(pred_bboxes[fg_mask], target_bboxes[fg_mask], Inner_SIoU=True, FocalLoss_='Focal_Inner_GIoU')
+        # loss_iou = ((1.0 - iou) * weight).sum() / target_scores_sum
         '''
             FocalerIoU 改进各类Loss 可以结合多种进行使用, 已经更新如下超过10+种
+            Focaler_PIoU/Focaler_PIoUv2
             Focaler_GIoU
             Focaler_DIoU
             Focaler_CIoU
             Focaler_EIoU
             Focaler_SIoU
             Focaler_WIoU
+            Focal_Focaler_PIoU/Focal_Focaler_PIoUv2
             Focal_Focaler_GIoU
             Focal_Focaler_DIoU
             Focal_Focaler_CIoU
@@ -139,8 +146,8 @@ class BboxLoss(nn.Module):
             Focal_Focaler_WIoU
             替换参数即可
         '''
-        iou = bbox_multi_iou(pred_bboxes[fg_mask], target_bboxes[fg_mask], Inner_SIoU=True, FocalLoss_='Focal_Inner_GIoU', FocalerIoU=True)
-        loss_iou = ((1.0 - iou) * weight).sum() / target_scores_sum
+        # iou = bbox_multi_iou(pred_bboxes[fg_mask], target_bboxes[fg_mask], Inner_SIoU=True, FocalLoss_='Focal_Inner_GIoU', FocalerIoU=True)
+        # loss_iou = ((1.0 - iou) * weight).sum() / target_scores_sum
         
         '''
             WIoU
@@ -149,7 +156,7 @@ class BboxLoss(nn.Module):
         # loss_iou = ((1.0 - iou) * weight).sum() / target_scores_sum
         
         '''
-            Focal Loss改进各类Loss：FocalCIoU、FocalDIoU、FocalEIoU、FocalGIoU、FocalSIoU、FocalWIoU
+            Focal Loss改进各类Loss：FocalCIoU、FocalDIoU、FocalEIoU、FocalGIoU、FocalSIoU、FocalWIoU、Focal_PIoU、Focal_PIoUv2、
         '''
         # ========FocalLoss改进版本 + CIoU、DIoU、EIoU、GIoU、SIoU、WIoU组合:FocalCIoU、FocalDIoU、FocalEIoU、FocalGIoU、FocalSIoU、FocalWIoU================
         # iou = bbox_focal_multi_iou(pred_bboxes[fg_mask], target_bboxes[fg_mask], xywh=False, WIoU=True, FocalLoss_='Focal_WIoU')

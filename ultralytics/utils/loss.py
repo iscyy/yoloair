@@ -10,13 +10,16 @@ from ultralytics.utils.tal import RotatedTaskAlignedAssigner, TaskAlignedAssigne
 
 from .metrics import bbox_iou, probiou
 
-'''
-    bbox_multi_iou、bbox_focal_multi_iou函数核心代码见ultralytics\utils\NewLoss\iouloss.py文件
-
-    bbox_multi_iou函数包含: CIoU、DIoU、EIoU、GIoU、SIoU、WIoU损失函数
-    bbox_focal_multi_iou函数包含: FocalCIoU、FocalDIoU、FocalEIoU、FocalGIoU、FocalSIoU、FocalWIoU损失函数
-'''
 from .NewLoss.iouloss import bbox_multi_iou, bbox_focal_multi_iou
+from .NewLoss.ioulossone import bbox_shape_iou
+
+
+# bbox_multi_iou、bbox_focal_multi_iou函数核心代码见ultralytics\utils\NewLoss\iouloss.py文件
+
+# bbox_multi_iou函数包含: CIoU、DIoU、EIoU、GIoU、SIoU、WIoU损失函数
+# bbox_focal_multi_iou函数包含: FocalCIoU、FocalDIoU、FocalEIoU、FocalGIoU、FocalSIoU、FocalWIoU损失函数
+# bbox_shape_iou函数包含: Shape_IoU损失函数
+
 from .tal import bbox2dist
 
 
@@ -100,6 +103,7 @@ class BboxLoss(nn.Module):
 
         '''
         iou = bbox_multi_iou(pred_bboxes[fg_mask], target_bboxes[fg_mask], xywh=False, CIoU=True)
+        # iou = bbox_shape_iou(pred_bboxes[fg_mask], target_bboxes[fg_mask], xywh=False) # Shape-IoU
         loss_iou = ((1.0 - iou) * weight).sum() / target_scores_sum
         
         '''

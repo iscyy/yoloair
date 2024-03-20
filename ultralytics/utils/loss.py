@@ -15,6 +15,10 @@ from .NewLoss.iouloss import bbox_multi_iou, bbox_focal_multi_iou
 # bbox_shape_iou, bbox_mpdiou, bbox_inner_multi_iou, bbox_piou, nwdiou, bbox_effciou, bbox_xiou函数核心代码见ultralytics\utils\NewLoss\ioulossone.py文件
 from .NewLoss.ioulossone import bbox_shape_iou, bbox_mpdiou, bbox_inner_multi_iou, bbox_piou, nwdiou, bbox_effciou, bbox_xiou
 
+# repulsionloss函数核心代码见ultralytics\utils\NewLoss\ioulossone.py文件
+from .NewLoss.repulsionloss import repulsionloss
+
+
 
 from .tal import bbox2dist
 
@@ -109,6 +113,13 @@ class BboxLoss(nn.Module):
         iou = bbox_effciou(pred_bboxes[fg_mask], target_bboxes[fg_mask], xywh=False, EffCIoU=True) # bbox_effciou
         # 新增xiou、Focal_Inner_xiou、Inner_xiou、Focaler_xiou、Focal_Focaler_xiou、Focal_xiou损失函数，均为改进版本
         iou = bbox_xiou(pred_bboxes[fg_mask], target_bboxes[fg_mask], xywh=False, EffCIoU=True) # bbox_xiou
+
+
+        # 新增repulsionloss损失函数，均为改进版本
+        iou = repulsionloss(
+            pred_bboxes, target_bboxes, fg_mask)
+
+
         loss_iou = ((1.0 - iou) * weight).sum() / target_scores_sum
         '''
             Inner-IoU 改进各类Loss 可以结合多种进行使用, 已经更新如下超过10+种

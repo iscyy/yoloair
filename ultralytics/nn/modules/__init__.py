@@ -83,6 +83,14 @@ from .CoreV8.Backbone.MobileViTv1 import CPNMobileViTB, CSCMobileViTB, ReNLANMob
 from .CoreV8.Backbone.MobileViTv2 import CPNMVBv2, CSCMVBv2, ReNLANMVBv2, C3_MVBv2, C2f_MVBv2
 from .CoreV8.Backbone.MobileViTv3 import CPNMViTBv3, CSCMViTBv3, ReNLANMViTBv3, C3_MViTBv3, C2f_MViTBv3
 from .CoreV8.Backbone.RepLKNet import CPNRepLKBlock, CSCRepLKBlock, ReNLANRepLKBlock, C3_RepLKBlock, C2f_RepLKBlock
+
+
+from .CoreV8.Neck.GELAN import RepNCSPELAN4
+
+
+
+
+
 from .Improve.SPPELAN import SPPELAN
 
 from  .Improve.Attention.simam import SimAM
@@ -108,7 +116,7 @@ __all__ = (
     "CPNMVBv2", "CSCMVBv2", "ReNLANMVBv2", "C3_MVBv2", "C2f_MVBv2",
     "CPNMViTBv3", "CSCMViTBv3", "ReNLANMViTBv3", "C3_MViTBv3", "C2f_MViTBv3",
     "CPNRepLKBlock", "CSCRepLKBlock", "ReNLANRepLKBlock", "C3_RepLKBlock", "C2f_RepLKBlock",
-    "SPPELAN",
+    "SPPELAN","RepNCSPELAN4",
     #------------------
     "LightConv",
     "RepConv",

@@ -63,7 +63,8 @@ from ultralytics.nn.modules import CPNConvNeXtv2, CSCConvNeXtv2, ReNLANConvNeXtv
 from ultralytics.nn.modules import CPNMVBv2, CSCMVBv2, ReNLANMVBv2, C3_MVBv2, C2f_MVBv2
 from ultralytics.nn.modules import CPNMViTBv3, CSCMViTBv3, ReNLANMViTBv3, C3_MViTBv3, C2f_MViTBv3
 from ultralytics.nn.modules import CPNRepLKBlock, CSCRepLKBlock, ReNLANRepLKBlock, C3_RepLKBlock, C2f_RepLKBlock
-from ultralytics.nn.modules import SPPELAN
+
+from ultralytics.nn.modules import SPPELAN, RepNCSPELAN4
 
 
 '''
@@ -948,6 +949,13 @@ def parse_model(d, ch, verbose=True):  # model_dict, input_channels(3)
             if c2 != nc:  # if not output
                 c2 = make_divisible(min(c2, max_channels) * width, 8)
             args = [c1, c2, *args[1:]]
+        elif m is RepNCSPELAN4: # 
+            c1, c2, c3, c4 = ch[f], args[0], args[1], args[2]
+            if c2 != nc:  # if c2 not equal to number of classes (i.e. for Classify() output)
+                c2 = make_divisible(min(c2, max_channels) * width, 8)
+                c3 = make_divisible(min(c3, max_channels) * width, 8)
+                c4 = make_divisible(min(c4, max_channels) * width, 8)
+            args = [c1, c2, c3, c4, *args[3:]]
         # Attention注意力机制汇总
         elif m in (SimAM, GAMAttention, CBAM, SKAttention, SOCA, ShuffleAttention):
             c1, c2 = ch[f], args[0]

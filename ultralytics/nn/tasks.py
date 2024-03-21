@@ -65,7 +65,7 @@ from ultralytics.nn.modules import CPNMViTBv3, CSCMViTBv3, ReNLANMViTBv3, C3_MVi
 from ultralytics.nn.modules import CPNRepLKBlock, CSCRepLKBlock, ReNLANRepLKBlock, C3_RepLKBlock, C2f_RepLKBlock
 
 from ultralytics.nn.modules import SPPELAN, RepNCSPELAN4
-from ultralytics.nn.modules import ASFF_3, ASFF_2, BasicBlock
+from ultralytics.nn.modules import ASFF_3, ASFF_2, BasicBlock, SSFF
 
 from ultralytics.nn.modules import (LAF_px, low_FAM, LAF_h, low_IFM, InjectionMultiSum_Auto_pool1, 
 InjectionMultiSum_Auto_pool2, InjectionMultiSum_Auto_pool3, InjectionMultiSum_Auto_pool4, 
@@ -1001,6 +1001,8 @@ def parse_model(d, ch, verbose=True):  # model_dict, input_channels(3)
         elif m is TopBasicLayer:
             c1 = ch[f]
             args = [c1, *args]
+        elif m is SSFF:
+            c2 = sum(ch[x] for x in f)
         # 新增模块======================
         elif m is nn.BatchNorm2d:
             args = [ch[f]]

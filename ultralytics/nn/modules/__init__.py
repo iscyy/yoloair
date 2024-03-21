@@ -92,6 +92,9 @@ from .CoreV8.Neck.GDM import LAF_px, low_FAM, LAF_h, low_IFM, InjectionMultiSum_
 InjectionMultiSum_Auto_pool2, InjectionMultiSum_Auto_pool3, InjectionMultiSum_Auto_pool4, \
 PyramidPoolAgg, TopBasicLayer
 
+from .CoreV8.Neck.SSFF import SSFF
+
+
 
 
 from .Improve.SPPELAN import SPPELAN
@@ -122,7 +125,7 @@ __all__ = (
     "SPPELAN","RepNCSPELAN4","ASFF_2", "ASFF_2", "BasicBlock",
     "LAF_px", "low_FAM", "LAF_h", "low_IFM", "InjectionMultiSum_Auto_pool1", \
     "InjectionMultiSum_Auto_pool2", "InjectionMultiSum_Auto_pool3", "InjectionMultiSum_Auto_pool4", \
-    "PyramidPoolAgg", "TopBasicLayer"
+    "PyramidPoolAgg", "TopBasicLayer", "SSFF",
     #------------------
     "LightConv",
     "RepConv",

@@ -65,7 +65,7 @@ from ultralytics.nn.modules import CPNMViTBv3, CSCMViTBv3, ReNLANMViTBv3, C3_MVi
 from ultralytics.nn.modules import CPNRepLKBlock, CSCRepLKBlock, ReNLANRepLKBlock, C3_RepLKBlock, C2f_RepLKBlock
 
 from ultralytics.nn.modules import SPPELAN, RepNCSPELAN4
-
+from ultralytics.nn.modules import ASFF_3, ASFF_2, BasicBlock
 
 '''
     Attention改进点更新
@@ -960,6 +960,21 @@ def parse_model(d, ch, verbose=True):  # model_dict, input_channels(3)
         elif m in (SimAM, GAMAttention, CBAM, SKAttention, SOCA, ShuffleAttention):
             c1, c2 = ch[f], args[0]
             if c2 != nc:  # if c2 not equal to number of classes (i.e. for Classify() output)
+                c2 = make_divisible(min(c2, max_channels) * width, 8)
+            args = [c1, c2, *args[1:]]
+        elif m is ASFF_2:
+            c1, c2 = [ch[f[0]], ch[f[1]]], args[0]
+            if c2 != nc:  # if not output
+                c2 = make_divisible(min(c2, max_channels) * width, 8)
+            args = [c1, c2, *args[1:]]
+        elif m is ASFF_3:
+            c1, c2 = [ch[f[0]], ch[f[1]], ch[f[2]]], args[0]
+            if c2 != nc:  # if not output
+                c2 = make_divisible(min(c2, max_channels) * width, 8)
+            args = [c1, c2, *args[1:]]
+        elif m is BasicBlock:
+            c1, c2 = ch[f], args[0]
+            if c2 != nc:  # if not output
                 c2 = make_divisible(min(c2, max_channels) * width, 8)
             args = [c1, c2, *args[1:]]
         # 新增模块======================

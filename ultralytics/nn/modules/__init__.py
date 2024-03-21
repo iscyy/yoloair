@@ -87,7 +87,7 @@ from .CoreV8.Backbone.RepLKNet import CPNRepLKBlock, CSCRepLKBlock, ReNLANRepLKB
 
 from .CoreV8.Neck.GELAN import RepNCSPELAN4
 from .CoreV8.Neck.RepFPN import SimSPPF
-
+from .CoreV8.Neck.AFPN import ASFF_2, ASFF_3, BasicBlock
 
 
 
@@ -117,7 +117,7 @@ __all__ = (
     "CPNMVBv2", "CSCMVBv2", "ReNLANMVBv2", "C3_MVBv2", "C2f_MVBv2",
     "CPNMViTBv3", "CSCMViTBv3", "ReNLANMViTBv3", "C3_MViTBv3", "C2f_MViTBv3",
     "CPNRepLKBlock", "CSCRepLKBlock", "ReNLANRepLKBlock", "C3_RepLKBlock", "C2f_RepLKBlock",
-    "SPPELAN","RepNCSPELAN4",
+    "SPPELAN","RepNCSPELAN4","ASFF_2", "ASFF_2", "BasicBlock",
     #------------------
     "LightConv",
     "RepConv",

@@ -5,4 +5,4 @@
 
 2024.03新增
 
-新增：CBAM注意力机制：[👉YOLOv8+CBAM 网络结构配置文件](./ultralytics\cfg\models\cfg2024\YOLOv8-Attention\YOLOv8-CBAM.yaml)
+新增：CBAM注意力机制：[👉YOLOv8+CBAM 网络结构配置文件](./ultralytics/cfg/models/cfg2024/YOLOv8-Attention/YOLOv8-CBAM.yaml)

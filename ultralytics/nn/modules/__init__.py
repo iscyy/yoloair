@@ -85,6 +85,13 @@ from .CoreV8.Backbone.MobileViTv3 import CPNMViTBv3, CSCMViTBv3, ReNLANMViTBv3, 
 from .CoreV8.Backbone.RepLKNet import CPNRepLKBlock, CSCRepLKBlock, ReNLANRepLKBlock, C3_RepLKBlock, C2f_RepLKBlock
 from .Improve.SPPELAN import SPPELAN
 
+from  .Improve.Attention.simam import SimAM
+from .Improve.Attention.gam import GAMAttention
+from .Improve.Attention.cbam import CBAM
+from .Improve.Attention.sk import SKAttention
+from .Improve.Attention.soca import SOCA
+from .Improve.Attention.sa import ShuffleAttention
+
 __all__ = (
     "Conv",
     "Conv2",
@@ -113,6 +120,11 @@ __all__ = (
     "ChannelAttention",
     "SpatialAttention",
     "CBAM",
+    "SimAM",
+    "GAMAttention",
+    "SKAttention",
+    "SOCA",
+    "ShuffleAttention",
     "Concat",
     "TransformerLayer",
     "TransformerBlock",

@@ -67,6 +67,10 @@ from ultralytics.nn.modules import CPNRepLKBlock, CSCRepLKBlock, ReNLANRepLKBloc
 from ultralytics.nn.modules import SPPELAN, RepNCSPELAN4
 from ultralytics.nn.modules import ASFF_3, ASFF_2, BasicBlock
 
+from ultralytics.nn.modules import (LAF_px, low_FAM, LAF_h, low_IFM, InjectionMultiSum_Auto_pool1, 
+InjectionMultiSum_Auto_pool2, InjectionMultiSum_Auto_pool3, InjectionMultiSum_Auto_pool4, 
+PyramidPoolAgg, TopBasicLayer)
+
 '''
     Attention改进点更新
     SimAM,
@@ -977,6 +981,26 @@ def parse_model(d, ch, verbose=True):  # model_dict, input_channels(3)
             if c2 != nc:  # if not output
                 c2 = make_divisible(min(c2, max_channels) * width, 8)
             args = [c1, c2, *args[1:]]
+        elif m in [low_FAM, LAF_h]:
+            c2 = sum(ch[x] for x in f)
+        elif m is LAF_px:
+            c2 = args[0]
+            if c2 != nc:  
+                c2 = make_divisible(min(c2, max_channels) * width, 8)
+            args = [[ch[x] for x in f][0:2], c2]
+        elif m is low_IFM:
+            c1 = ch[f]
+            args = [c1, *args]
+        elif m in [InjectionMultiSum_Auto_pool1, InjectionMultiSum_Auto_pool2, InjectionMultiSum_Auto_pool3, InjectionMultiSum_Auto_pool4]:
+            c1 = ch[f[0]]
+            c2 = args[0]
+            args = [c1, c2, *args]
+        elif m is PyramidPoolAgg:
+            c2 = args[0]
+            args = [sum([ch[f_] for f_ in f]), *args]
+        elif m is TopBasicLayer:
+            c1 = ch[f]
+            args = [c1, *args]
         # 新增模块======================
         elif m is nn.BatchNorm2d:
             args = [ch[f]]

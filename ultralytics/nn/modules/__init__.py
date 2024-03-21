@@ -86,6 +86,7 @@ from .CoreV8.Backbone.RepLKNet import CPNRepLKBlock, CSCRepLKBlock, ReNLANRepLKB
 
 
 from .CoreV8.Neck.GELAN import RepNCSPELAN4
+from .CoreV8.Neck.RepFPN import SimSPPF
 
 
 

@@ -54,7 +54,7 @@ from ultralytics.nn.modules import (
 )
 from ultralytics.nn.modules import CPNGhost, CSCGhost, ReNLANGhost, C3_Ghost, C2f_Ghost
 
-from ultralytics.nn.modules import RepVGGBlock, SimConv, RepBlock, Transpose
+from ultralytics.nn.modules import RepVGGBlock, SimConv, RepBlock, Transpose, SimSPPF
 from ultralytics.nn.modules import CReToNeXt
 from ultralytics.nn.modules import CPNMobileViTB, CSCMobileViTB, ReNLANMobileViTB, C3_MobileViTB, C2f_MobileViTB
 
@@ -880,7 +880,7 @@ def parse_model(d, ch, verbose=True):  # model_dict, input_channels(3)
             if m in [CPNGhost, CSCGhost, C3_Ghost, C2f_Ghost]:
                 args.insert(2, n)  # number of repeats
                 n = 1
-        elif m in [RepVGGBlock, RepBlock, SimConv, Transpose]:
+        elif m in [RepVGGBlock, RepBlock, SimConv, Transpose, SimSPPF]:
             c1, c2 = ch[f], args[0]
             if c2 != nc:
                 c2 = make_divisible(min(c2, max_channels) * width, 8)

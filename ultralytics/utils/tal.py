@@ -163,7 +163,7 @@ class TaskAlignedAssigner(nn.Module):
     def get_targets(self, gt_labels, gt_bboxes, target_gt_idx, fg_mask):
         """
         Compute target labels, target bounding boxes, and target scores for the positive anchor points.
-
+        More improvement points for YOLOv8, please see https://github.com/iscyy/ultralyticsPro
         Args:
             gt_labels (Tensor): Ground truth labels of shape (b, max_num_obj, 1), where b is the
                                 batch size and max_num_obj is the maximum number of objects.

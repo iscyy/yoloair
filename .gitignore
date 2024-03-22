@@ -5,6 +5,7 @@ __pycache__/
 
 # C extensions
 *.so
+/note
 
 # Distribution / packaging
 .Python
@@ -166,3 +167,4 @@ pnnx*
 ultralytics/nn/modules/CoreV8
 /ultralytics/utils/NewLoss
 /ultralytics/utils/NewLA
+/docs/

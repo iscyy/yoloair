@@ -41,6 +41,55 @@ from ultralytics.nn.modules import (
     RTDETRDecoder,
     Segment,
 )
+
+'''
+导入的改进点核心代码模块见ultralytics\nn\modules\CoreV8\Backbone下面的文件夹
+'''
+
+from ultralytics.nn.modules import C3_RMB, CSRMBC, C2f_RMB, CPNRMB, ReNLANRMB
+from ultralytics.nn.modules import CSCBiF, ReNLANBiF, CPNBiF, C3_Biformer, C2f_Biformer
+from ultralytics.nn.modules import CSCFocalNeXt, ReNLANFocalNeXt, CPNFocalNeXt, C3_FocalNeXt, C2f_FocalNeXt
+from ultralytics.nn.modules import (
+    FasterNeXt, CSCFasterNeXt, ReNLANFasterNeXt, C3_FasterNeXt, C2f_FasterNeXt
+)
+from ultralytics.nn.modules import CPNGhost, CSCGhost, ReNLANGhost, C3_Ghost, C2f_Ghost
+
+from ultralytics.nn.modules import RepVGGBlock, SimConv, RepBlock, Transpose, SimSPPF
+from ultralytics.nn.modules import CReToNeXt
+from ultralytics.nn.modules import CPNMobileViTB, CSCMobileViTB, ReNLANMobileViTB, C3_MobileViTB, C2f_MobileViTB
+
+from ultralytics.nn.modules import QARep, CSCQARep, ReNLANQARep, C3_QARep, C2f_QARep
+from ultralytics.nn.modules import CPNConvNeXtv2, CSCConvNeXtv2, ReNLANConvNeXtv2, C3_ConvNeXtv2, C2f_ConvNeXtv2
+from ultralytics.nn.modules import CPNMVBv2, CSCMVBv2, ReNLANMVBv2, C3_MVBv2, C2f_MVBv2
+from ultralytics.nn.modules import CPNMViTBv3, CSCMViTBv3, ReNLANMViTBv3, C3_MViTBv3, C2f_MViTBv3
+from ultralytics.nn.modules import CPNRepLKBlock, CSCRepLKBlock, ReNLANRepLKBlock, C3_RepLKBlock, C2f_RepLKBlock
+
+from ultralytics.nn.modules import SPPELAN, RepNCSPELAN4
+from ultralytics.nn.modules import ASFF_3, ASFF_2, BasicBlock, SSFF
+
+from ultralytics.nn.modules import (LAF_px, low_FAM, LAF_h, low_IFM, InjectionMultiSum_Auto_pool1, 
+InjectionMultiSum_Auto_pool2, InjectionMultiSum_Auto_pool3, InjectionMultiSum_Auto_pool4, 
+PyramidPoolAgg, TopBasicLayer)
+
+'''
+    Attention改进点更新
+    SimAM,
+    GAMAttention,
+    CBAM,
+    SKAttention,
+    SOCA,
+    ShuffleAttention,
+'''
+from ultralytics.nn.modules import (
+    SimAM,
+    GAMAttention,
+    CBAM,
+    SKAttention,
+    SOCA,
+    ShuffleAttention,
+)
+
+
 from ultralytics.utils import DEFAULT_CFG_DICT, DEFAULT_CFG_KEYS, LOGGER, colorstr, emojis, yaml_load
 from ultralytics.utils.checks import check_requirements, check_suffix, check_yaml
 from ultralytics.utils.loss import v8ClassificationLoss, v8DetectionLoss, v8OBBLoss, v8PoseLoss, v8SegmentationLoss
@@ -795,6 +844,166 @@ def parse_model(d, ch, verbose=True):  # model_dict, input_channels(3)
                 n = 1
         elif m is ResNetLayer:
             c2 = args[1] if args[3] else args[1] * 4
+        elif m in [C3_RMB, CSRMBC, C2f_RMB, CPNRMB, ReNLANRMB]:
+            c1, c2 = ch[f], args[0]
+            if c2 != nc:  # if not output
+                c2 = make_divisible(min(c2, max_channels) * width, 8)
+            args = [c1, c2, *args[1:]]
+            if m in [C3_RMB, CSRMBC, C2f_RMB, CPNRMB]:
+                args.insert(2, n)  # number of repeats
+                n = 1
+        elif m in [CSCBiF, ReNLANBiF, CPNBiF, C3_Biformer, C2f_Biformer]:
+            c1, c2 = ch[f], args[0]
+            if c2 != nc:  # if not output
+                c2 = make_divisible(min(c2, max_channels) * width, 8)
+            args = [c1, c2, *args[1:]]
+            if m in [CSCBiF, CPNBiF, C3_Biformer, C2f_Biformer]:
+                args.insert(2, n)  # number of repeats
+                n = 1
+        elif m in [CSCFocalNeXt, ReNLANFocalNeXt, CPNFocalNeXt, C3_FocalNeXt, C2f_FocalNeXt]:
+            c1, c2 = ch[f], args[0]
+            if c2 != nc:  # if not output
+                c2 = make_divisible(min(c2, max_channels) * width, 8)
+            args = [c1, c2, *args[1:]]
+            if m in [CSCFocalNeXt, CPNFocalNeXt, C3_FocalNeXt, C2f_FocalNeXt]:
+                args.insert(2, n)  # number of repeats
+                n = 1
+        elif m in [FasterNeXt, CSCFasterNeXt, ReNLANFasterNeXt, C3_FasterNeXt, C2f_FasterNeXt]:
+            c1, c2 = ch[f], args[0]
+            if c2 != nc:  # if not output
+                c2 = make_divisible(min(c2, max_channels) * width, 8)
+            args = [c1, c2, *args[1:]]
+            if m in [FasterNeXt, CSCFasterNeXt, C3_FasterNeXt, C2f_FasterNeXt]:
+                args.insert(2, n)  # number of repeats
+                n = 1
+        elif m in [CPNGhost, CSCGhost, ReNLANGhost, C3_Ghost, C2f_Ghost]:
+            c1, c2 = ch[f], args[0]
+            if c2 != nc:  # if not output
+                c2 = make_divisible(min(c2, max_channels) * width, 8)
+            args = [c1, c2, *args[1:]]
+            if m in [CPNGhost, CSCGhost, C3_Ghost, C2f_Ghost]:
+                args.insert(2, n)  # number of repeats
+                n = 1
+        elif m in [RepVGGBlock, RepBlock, SimConv, Transpose, SimSPPF]:
+            c1, c2 = ch[f], args[0]
+            if c2 != nc:
+                c2 = make_divisible(min(c2, max_channels) * width, 8)
+            args = [c1, c2, *args[1:]]
+            if m in [RepBlock]:
+                args.insert(2, n)  # number of repeats
+                n = 1
+        elif m in [CReToNeXt]:
+            c1, c2 = ch[f], args[0]
+            if c2 != nc:  # if c2 not equal to number of classes (i.e. for Classify() output)
+                c2 = make_divisible(min(c2, max_channels) * width, 8)
+            args = [c1, c2, *args[1:]]
+            if m in [CReToNeXt]:
+                args.insert(2, n)  # number of repeats
+                n = 1
+        elif m in [QARep, CSCQARep, ReNLANQARep, C3_QARep, C2f_QARep]:
+            c1, c2 = ch[f], args[0]
+            if c2 != nc:  # if not output
+                c2 = make_divisible(min(c2, max_channels) * width, 8)
+            args = [c1, c2, *args[1:]]
+            if m in [QARep, CSCQARep, C3_QARep, C2f_QARep]:
+                args.insert(2, n)  # number of repeats
+                n = 1
+        elif m in [CPNConvNeXtv2, CSCConvNeXtv2, ReNLANConvNeXtv2, C3_ConvNeXtv2, C2f_ConvNeXtv2]:
+            c1, c2 = ch[f], args[0]
+            if c2 != nc:  # if not output
+                c2 = make_divisible(min(c2, max_channels) * width, 8)
+            args = [c1, c2, *args[1:]]
+            if m in [CPNConvNeXtv2, CSCConvNeXtv2, C3_ConvNeXtv2, C2f_ConvNeXtv2]:
+                args.insert(2, n)  # number of repeats
+                n = 1
+        elif m in [CPNMobileViTB, CSCMobileViTB, ReNLANMobileViTB, C3_MobileViTB, C2f_MobileViTB]:
+            c1, c2 = ch[f], args[0]
+            if c2 != nc:  # if not output
+                c2 = make_divisible(min(c2, max_channels) * width, 8)
+            args = [c1, c2, *args[1:]]
+            if m in [CPNMobileViTB, CSCMobileViTB, C3_MobileViTB, C2f_MobileViTB]:
+                args.insert(2, n)  # number of repeats
+                n = 1
+        elif m in [CPNMVBv2, CSCMVBv2, ReNLANMVBv2, C3_MVBv2, C2f_MVBv2]:
+            c1, c2 = ch[f], args[0]
+            if c2 != nc:  # if not output
+                c2 = make_divisible(min(c2, max_channels) * width, 8)
+            args = [c1, c2, *args[1:]]
+            if m in [CPNMVBv2, CSCMVBv2, C3_MVBv2, C2f_MVBv2]:
+                args.insert(2, n)  # number of repeats
+                n = 1
+        elif m in [CPNMViTBv3, CSCMViTBv3, ReNLANMViTBv3, C3_MViTBv3, C2f_MViTBv3]:
+            c1, c2 = ch[f], args[0]
+            if c2 != nc:  # if not output
+                c2 = make_divisible(min(c2, max_channels) * width, 8)
+            args = [c1, c2, *args[1:]]
+            if m in [CPNMViTBv3, CSCMViTBv3, C3_MViTBv3, C2f_MViTBv3]:
+                args.insert(2, n)  # number of repeats
+                n = 1
+        elif m in [CPNRepLKBlock, CSCRepLKBlock, ReNLANRepLKBlock, C3_RepLKBlock, C2f_RepLKBlock]:
+            c1, c2 = ch[f], args[0]
+            if c2 != nc:  # if not output
+                c2 = make_divisible(min(c2, max_channels) * width, 8)
+            args = [c1, c2, *args[1:]]
+            if m in [CPNRepLKBlock, CSCRepLKBlock, C3_RepLKBlock, C2f_RepLKBlock]:
+                args.insert(2, n)  # number of repeats
+                n = 1
+        elif m is SPPELAN:
+            c1, c2 = ch[f], args[0]
+            if c2 != nc:  # if not output
+                c2 = make_divisible(min(c2, max_channels) * width, 8)
+            args = [c1, c2, *args[1:]]
+        elif m is RepNCSPELAN4: # 
+            c1, c2, c3, c4 = ch[f], args[0], args[1], args[2]
+            if c2 != nc:  # if c2 not equal to number of classes (i.e. for Classify() output)
+                c2 = make_divisible(min(c2, max_channels) * width, 8)
+                c3 = make_divisible(min(c3, max_channels) * width, 8)
+                c4 = make_divisible(min(c4, max_channels) * width, 8)
+            args = [c1, c2, c3, c4, *args[3:]]
+        # Attention注意力机制汇总
+        elif m in (SimAM, GAMAttention, CBAM, SKAttention, SOCA, ShuffleAttention):
+            c1, c2 = ch[f], args[0]
+            if c2 != nc:  # if c2 not equal to number of classes (i.e. for Classify() output)
+                c2 = make_divisible(min(c2, max_channels) * width, 8)
+            args = [c1, c2, *args[1:]]
+        elif m is ASFF_2:
+            c1, c2 = [ch[f[0]], ch[f[1]]], args[0]
+            if c2 != nc:  # if not output
+                c2 = make_divisible(min(c2, max_channels) * width, 8)
+            args = [c1, c2, *args[1:]]
+        elif m is ASFF_3:
+            c1, c2 = [ch[f[0]], ch[f[1]], ch[f[2]]], args[0]
+            if c2 != nc:  # if not output
+                c2 = make_divisible(min(c2, max_channels) * width, 8)
+            args = [c1, c2, *args[1:]]
+        elif m is BasicBlock:
+            c1, c2 = ch[f], args[0]
+            if c2 != nc:  # if not output
+                c2 = make_divisible(min(c2, max_channels) * width, 8)
+            args = [c1, c2, *args[1:]]
+        elif m in [low_FAM, LAF_h]:
+            c2 = sum(ch[x] for x in f)
+        elif m is LAF_px:
+            c2 = args[0]
+            if c2 != nc:  
+                c2 = make_divisible(min(c2, max_channels) * width, 8)
+            args = [[ch[x] for x in f][0:2], c2]
+        elif m is low_IFM:
+            c1 = ch[f]
+            args = [c1, *args]
+        elif m in [InjectionMultiSum_Auto_pool1, InjectionMultiSum_Auto_pool2, InjectionMultiSum_Auto_pool3, InjectionMultiSum_Auto_pool4]:
+            c1 = ch[f[0]]
+            c2 = args[0]
+            args = [c1, c2, *args]
+        elif m is PyramidPoolAgg:
+            c2 = args[0]
+            args = [sum([ch[f_] for f_ in f]), *args]
+        elif m is TopBasicLayer:
+            c1 = ch[f]
+            args = [c1, *args]
+        elif m is SSFF:
+            c2 = sum(ch[x] for x in f)
+        # 新增模块======================
         elif m is nn.BatchNorm2d:
             args = [ch[f]]
         elif m is Concat:
@@ -862,7 +1071,7 @@ def guess_model_scale(model_path):
 def guess_model_task(model):
     """
     Guess the task of a PyTorch model from its architecture or configuration.
-
+    More improvement points for YOLOv8, please see https://github.com/iscyy/ultralyticsPro
     Args:
         model (nn.Module | dict): PyTorch model or model configuration in YAML format.
 

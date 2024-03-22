@@ -9,6 +9,25 @@ from ultralytics.utils.ops import crop_mask, xywh2xyxy, xyxy2xywh
 from ultralytics.utils.tal import RotatedTaskAlignedAssigner, TaskAlignedAssigner, dist2bbox, dist2rbox, make_anchors
 
 from .metrics import bbox_iou, probiou
+
+from colorama import Fore, Back, Style
+
+try:
+    # bbox_multi_iou、bbox_focal_multi_iou函数核心代码见ultralytics\utils\NewLoss\iouloss.py文件
+    from .NewLoss.iouloss import bbox_multi_iou, bbox_focal_multi_iou
+    # bbox_shape_iou, bbox_mpdiou, bbox_inner_multi_iou, bbox_piou, nwdiou, bbox_effciou, bbox_xiou函数核心代码见ultralytics\utils\NewLoss\ioulossone.py文件
+    from .NewLoss.ioulossone import bbox_shape_iou, bbox_mpdiou, bbox_inner_multi_iou, bbox_piou, nwdiou, bbox_effciou, bbox_xiou
+
+    # repulsionloss函数核心代码见ultralytics\utils\NewLoss\repulsionloss.py文件
+    from .NewLoss.repulsionloss import repulsionloss
+
+    # gwdloss函数核心代码见ultralytics\utils\NewLoss\gwdloss.py文件, 详细代码在该文件中
+    from .NewLoss.gwdloss import gwdloss
+    # kldloss函数核心代码见ultralytics\utils\NewLoss\kldloss.py文件, 详细代码在该文件中
+    from .NewLoss.kldloss import kldloss
+except Exception as e:
+    print('核心代码')
+
 from .tal import bbox2dist
 
 
@@ -75,8 +94,109 @@ class BboxLoss(nn.Module):
     def forward(self, pred_dist, pred_bboxes, anchor_points, target_bboxes, target_scores, target_scores_sum, fg_mask):
         """IoU loss."""
         weight = target_scores.sum(-1)[fg_mask].unsqueeze(-1)
-        iou = bbox_iou(pred_bboxes[fg_mask], target_bboxes[fg_mask], xywh=False, CIoU=True)
+        # origin iou
+        iou = bbox_iou(pred_bboxes[fg_mask], target_bboxes[fg_mask], xywh=False, CIoU=True) # 🎈 对应IoU损失函数注释即可运行代码
         loss_iou = ((1.0 - iou) * weight).sum() / target_scores_sum
+        
+        '''
+            Loss改进各类Loss：CIoU、DIoU、EIoU、GIoU、SIoU、WIoU
+            
+            support multi iou loss
+            CIoU🚀 (bool, optional): If True, calculate Complete IoU. Defaults to False. origin loss
+            GIoU🚀 (bool, optional): If True, calculate Generalized IoU. Defaults to False.
+            DIoU🚀 (bool, optional): If True, calculate Distance IoU. Defaults to False.
+            EIoU🚀 (bool, optional): If True, calculate Generalized IoU. Defaults to False.
+            SIoU🚀 (bool, optional): If True, calculate Distance IoU. Defaults to False.
+            WIoU🚀 (bool, optional): If True, calculate Complete IoU. Defaults to False.
+            PIoU🚀 (bool, optional): If True, calculate Complete IoU. Defaults to False.
+
+        '''
+        # iou = bbox_multi_iou(pred_bboxes[fg_mask], target_bboxes[fg_mask], xywh=False, CIoU=True)# 🎈 对应IoU损失函数注释即可运行代码
+        # iou = bbox_shape_iou(pred_bboxes[fg_mask], target_bboxes[fg_mask], xywh=False) # Shape-IoU# 🎈 对应IoU损失函数注释即可运行代码
+        # iou = bbox_mp_iou(pred_bboxes[fg_mask], target_bboxes[fg_mask], xywh=False, MPDIoU=True)# 🎈 对应IoU损失函数注释即可运行代码
+        # iou = bbox_piou(pred_bboxes[fg_mask], target_bboxes[fg_mask], xywh=False, PIoU=True) # 参数可以切换为PIoU和PIoUv2两个版本# 🎈 对应IoU损失函数注释即可运行代码
+        # 新增Focal_Inner_NWD、Inner_NWD、Focaler_NWD、Focal_Focaler_NWD、Focal_NWD损失函数，均为改进版本#
+        # iou = nwdiou(pred_bboxes[fg_mask], target_bboxes[fg_mask], xywh=False, NWD=True) # NWDLoss# 🎈 对应IoU损失函数注释即可运行代码
+        # 新增Focal_Inner_EffCIoU、Inner_EffCIoU、Focaler_EffCIoU、Focal_Focaler_EffCIoU、Focal_EffCIoU损失函数，均为改进版本
+        # iou = bbox_effciou(pred_bboxes[fg_mask], target_bboxes[fg_mask], xywh=False, EffCIoU=True) # bbox_effciou# 🎈 对应IoU损失函数注释即可运行代码
+        # 新增xiou、Focal_Inner_xiou、Inner_xiou、Focaler_xiou、Focal_Focaler_xiou、Focal_xiou损失函数，均为改进版本
+        # iou = bbox_xiou(pred_bboxes[fg_mask], target_bboxes[fg_mask], xywh=False, EffCIoU=True) # bbox_xiou# 🎈 对应IoU损失函数注释即可运行代码
+
+
+        # 新增repulsionloss损失函数，均为改进版本# 🎈 对应IoU损失函数注释即可运行代码
+        # iou = repulsionloss(
+        #     pred_bboxes, target_bboxes, fg_mask)
+        
+        # 新增gwdloss损失函数# 🎈 对应IoU损失函数注释即可运行代码
+        # iou = gwdloss(
+        #     pred_bboxes, target_bboxes, fg_mask, gwd=1.0) # GWD Loss
+        
+
+        # 新增kldloss损失函数,核心代码详情在https://github.com/iscyy/ultralyticsPro/tree/main/ultralytics/utils/NewLoss/kldloss.py 文件
+        # iou = kldloss(# 🎈 对应IoU损失函数注释即可运行代码
+        #     pred_bboxes, target_bboxes, fg_mask, gwd=1.0) # GWD Loss
+
+
+        loss_iou = ((1.0 - iou) * weight).sum() / target_scores_sum
+        '''
+            Inner-IoU 改进各类Loss 可以结合多种进行使用, 已经更新如下超过10+种
+            Focal_Inner_PIoU/Focal_Inner_PIoUv2
+            Focal_Inner_GIoU
+            Focal_Inner_DIoU
+            Focal_Inner_CIoU
+            Focal_Inner_EIoU
+            Focal_Inner_SIoU
+            Focal_Inner_WIoU
+            Inner_PIoU/Inner_PIoUv2
+            Inner_GIoU
+            Inner_DIoU
+            Inner_CIoU
+            Inner_EIoU
+            Inner_SIoU
+            Inner_WIoU
+            替换参数即可
+        '''
+        # iou = bbox_inner_multi_iou(pred_bboxes[fg_mask], target_bboxes[fg_mask], Inner_SIoU=True, FocalLoss_='Focal_Inner_GIoU')
+        # loss_iou = ((1.0 - iou) * weight).sum() / target_scores_sum
+        '''
+            FocalerIoU 改进各类Loss 可以结合多种进行使用, 已经更新如下超过10+种
+            Focaler_PIoU/Focaler_PIoUv2
+            Focaler_GIoU
+            Focaler_DIoU
+            Focaler_CIoU
+            Focaler_EIoU
+            Focaler_SIoU
+            Focaler_WIoU
+            Focal_Focaler_PIoU/Focal_Focaler_PIoUv2
+            Focal_Focaler_GIoU
+            Focal_Focaler_DIoU
+            Focal_Focaler_CIoU
+            Focal_Focaler_EIoU
+            Focal_Focaler_SIoU
+            Focal_Focaler_WIoU
+            替换参数即可
+        '''
+        # iou = bbox_multi_iou(pred_bboxes[fg_mask], target_bboxes[fg_mask], Inner_SIoU=True, FocalLoss_='Focal_Inner_GIoU', FocalerIoU=True)
+        # loss_iou = ((1.0 - iou) * weight).sum() / target_scores_sum
+        
+        '''
+            WIoU
+        '''
+        # loss, iou = bbox_multi_iou(pred_bboxes[fg_mask], target_bboxes[fg_mask], xywh=False, WIoU=True)
+        # loss_iou = ((1.0 - iou) * weight).sum() / target_scores_sum
+        
+        '''
+            Focal Loss改进各类Loss：FocalCIoU、FocalDIoU、FocalEIoU、FocalGIoU、FocalSIoU、FocalWIoU、Focal_PIoU、Focal_PIoUv2、
+        '''
+        # ========FocalLoss改进版本 + CIoU、DIoU、EIoU、GIoU、SIoU、WIoU组合:FocalCIoU、FocalDIoU、FocalEIoU、FocalGIoU、FocalSIoU、FocalWIoU================
+        # iou = bbox_focal_multi_iou(pred_bboxes[fg_mask], target_bboxes[fg_mask], xywh=False, WIoU=True, FocalLoss_='Focal_WIoU')
+        # if len(iou) >= 2:
+        #     iou_f = iou[1]
+        #     loss_iou = ((iou_f.detach() * (1.0 - iou[0])) * weight).sum() / target_scores_sum
+        # else:
+        #     loss_iou = ((1.0 - iou) * weight).sum() / target_scores_sum  # iou loss
+        # ========================
+        
 
         # DFL loss
         if self.use_dfl:
@@ -526,6 +646,7 @@ class v8PoseLoss(v8DetectionLoss):
         This function calculates the keypoints loss and keypoints object loss for a given batch. The keypoints loss is
         based on the difference between the predicted keypoints and ground truth keypoints. The keypoints object loss is
         a binary classification loss that classifies whether a keypoint is present or not.
+        More improvement points for YOLOv8, please see https://github.com/iscyy/ultralyticsPro
 
         Args:
             masks (torch.Tensor): Binary mask tensor indicating object presence, shape (BS, N_anchors).
@@ -694,7 +815,7 @@ class v8OBBLoss(v8DetectionLoss):
     def bbox_decode(self, anchor_points, pred_dist, pred_angle):
         """
         Decode predicted object bounding box coordinates from anchor points and distribution.
-
+        More improvement points for YOLOv8, please see https://github.com/iscyy/ultralyticsPro
         Args:
             anchor_points (torch.Tensor): Anchor points, (h*w, 2).
             pred_dist (torch.Tensor): Predicted rotated distance, (bs, h*w, 4).

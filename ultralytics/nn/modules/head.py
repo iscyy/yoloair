@@ -16,8 +16,6 @@ from .utils import bias_init_with_prob, linear_init_
 
 __all__ = "Detect", "Segment", "Pose", "Classify", "OBB", "RTDETRDecoder"
 
-from ultralytics.utils.script import load_script
-ARGS_PA = load_script()
 
 '''
 YOLOv8 + "AsDDet", "LADH", "SERDet", "ShareSepHead", "TransHead"等 Head检测头改进核心代码
@@ -28,6 +26,8 @@ YOLOv8 + "AsDDet", "LADH", "SERDet", "ShareSepHead", "TransHead"等 Head检测�
 # ...code
 
 try:
+    from ultralytics.utils.script import load_script
+    ARGS_PA = load_script()
     if ARGS_PA.newhead =='AsDDet':
         # 改进的各类检测头Head的存放路径：ultralytics\nn\modules\CoreV8\Head\AsDDet.py, 代码详情见 ⭐⭐⭐ https://github.com/iscyy/ultralyticsPro/wiki/YOLOv8 ⭐⭐⭐ 说明
         from .CoreV8.Head.AsDDet import AsDDet as Detect

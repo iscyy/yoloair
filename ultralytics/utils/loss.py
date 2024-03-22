@@ -10,7 +10,6 @@ from ultralytics.utils.tal import RotatedTaskAlignedAssigner, TaskAlignedAssigne
 
 from .metrics import bbox_iou, probiou
 
-from colorama import Fore, Back, Style
 
 try:
     # bbox_multi_iou、bbox_focal_multi_iou函数核心代码见ultralytics\utils\NewLoss\iouloss.py文件
@@ -95,7 +94,18 @@ class BboxLoss(nn.Module):
         """IoU loss."""
         weight = target_scores.sum(-1)[fg_mask].unsqueeze(-1)
         # origin iou
-        iou = bbox_iou(pred_bboxes[fg_mask], target_bboxes[fg_mask], xywh=False, CIoU=True) # 🎈 对应IoU损失函数注释即可运行代码
+        try:
+            from .script import load_script
+            ARGS_PA = load_script()
+            useloss = ARGS_PA.loss # TAL执行的时候默认使用CIoU, 所以默认会打印
+            if useloss == 'CIoU':
+                iou = bbox_iou(pred_bboxes[fg_mask], target_bboxes[fg_mask], xywh=False, CIoU=True) # 🎈 对应IoU损失函数注释即可运行代码
+            elif useloss == 'DIoU':
+                iou = bbox_iou(pred_bboxes[fg_mask], target_bboxes[fg_mask], xywh=False, DIoU=True)
+            elif useloss == 'GIoU':
+                iou = bbox_iou(pred_bboxes[fg_mask], target_bboxes[fg_mask], xywh=False, GIoU=True)
+        except Exception as e:
+            iou = bbox_iou(pred_bboxes[fg_mask], target_bboxes[fg_mask], xywh=False, CIoU=True)
         loss_iou = ((1.0 - iou) * weight).sum() / target_scores_sum
         
         '''
@@ -137,7 +147,7 @@ class BboxLoss(nn.Module):
         #     pred_bboxes, target_bboxes, fg_mask, gwd=1.0) # GWD Loss
 
 
-        loss_iou = ((1.0 - iou) * weight).sum() / target_scores_sum
+        # loss_iou = ((1.0 - iou) * weight).sum() / target_scores_sum
         '''
             Inner-IoU 改进各类Loss 可以结合多种进行使用, 已经更新如下超过10+种
             Focal_Inner_PIoU/Focal_Inner_PIoUv2

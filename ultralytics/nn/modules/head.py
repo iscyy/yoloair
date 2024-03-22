@@ -39,6 +39,8 @@ try:
         from .CoreV8.Head.ShareSepHead import ShareSepHead as Detect
     elif ARGS_PA.newhead =='TransHead':
         from .CoreV8.Head.TransHead import TransHead as Detect
+    elif ARGS_PA.newhead =='DynamicHead':
+        from .CoreV8.Head.DynamicHead import DynamicHead as Detect
     else:
         from .CoreV8.Head.YOLOv8Detect import Detect
 except Exception as e:

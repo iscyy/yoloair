@@ -3,6 +3,4 @@
 
 #### 🌟 全新的YOLOv8改进项目版本来袭，最新改进点更新🚀2024
 
-2024.03新增
-
-新增：CBAM注意力机制：[👉YOLOv8+CBAM 网络结构配置文件](./ultralytics/cfg/models/cfg2024/YOLOv8-Attention/YOLOv8-CBAM.yaml)
+[全新的YOLOv8改进项目说明: 点击查看详情](https://www.yuque.com/mangguoai-oaad7/ultralyticspro/yolov8)

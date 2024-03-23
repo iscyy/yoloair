@@ -86,13 +86,18 @@ from .CoreV8.Backbone.RepLKNet import CPNRepLKBlock, CSCRepLKBlock, ReNLANRepLKB
 
 
 from .CoreV8.Neck.GELAN import RepNCSPELAN4
-from .CoreV8.Neck.RepFPN import SimSPPF
 from .CoreV8.Neck.AFPN import ASFF_2, ASFF_3, BasicBlock
 from .CoreV8.Neck.GDM import LAF_px, low_FAM, LAF_h, low_IFM, InjectionMultiSum_Auto_pool1, \
 InjectionMultiSum_Auto_pool2, InjectionMultiSum_Auto_pool3, InjectionMultiSum_Auto_pool4, \
 PyramidPoolAgg, TopBasicLayer
 
 from .CoreV8.Neck.SSFF import SSFF
+
+from .CoreV8.SPPF.SimSPPF import SimConv, SimSPPF
+from .CoreV8.SPPF.ASPP import ASPP
+
+from .CoreV8.SPPF.BasicRFB import BasicRFB
+
 
 
 
@@ -125,7 +130,7 @@ __all__ = (
     "SPPELAN","RepNCSPELAN4","ASFF_2", "ASFF_2", "BasicBlock",
     "LAF_px", "low_FAM", "LAF_h", "low_IFM", "InjectionMultiSum_Auto_pool1", \
     "InjectionMultiSum_Auto_pool2", "InjectionMultiSum_Auto_pool3", "InjectionMultiSum_Auto_pool4", \
-    "PyramidPoolAgg", "TopBasicLayer", "SSFF",
+    "PyramidPoolAgg", "TopBasicLayer", "SSFF", "SimSPPF", "ASPP",  "BasicRFB", 
     #------------------
     "LightConv",
     "RepConv",

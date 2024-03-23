@@ -3,22 +3,22 @@ import torch.nn as nn
 import torch.nn.functional as F
 
 class Upsample(nn.Module):
-    # 🎈YOLOv8-SSFF 改进==👇'
+    # 🎈YOLOv8 改进==👇'
     # 👉获取所有Backbone主干、Neck融合等改进核心模块, 详情见 https://github.com/iscyy/ultralyticsPro/wiki/YOLOv8
     pass
         
 class Downsample_x2(nn.Module):
-    # 🎈YOLOv8-SSFF 改进==👇'
+    # 🎈YOLOv8 改进==👇'
     # 👉获取所有Backbone主干、Neck融合等改进核心模块, 详情见 https://github.com/iscyy/ultralyticsPro/wiki/YOLOv8
     pass
     
 class Downsample_x4(nn.Module):
-    # 🎈YOLOv8-SSFF 改进==👇'
+    # 🎈YOLOv8 改进==👇'
     # 👉获取所有Backbone主干、Neck融合等改进核心模块, 详情见 https://github.com/iscyy/ultralyticsPro/wiki/YOLOv8
     pass
     
 class Downsample_x8(nn.Module):
-    # 🎈YOLOv8-SSFF 改进==👇'
+    # 🎈YOLOv8 改进==👇'
     # 👉获取所有Backbone主干、Neck融合等改进核心模块, 详情见 https://github.com/iscyy/ultralyticsPro/wiki/YOLOv8
     pass
     

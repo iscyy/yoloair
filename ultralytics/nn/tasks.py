@@ -71,7 +71,7 @@ from ultralytics.nn.modules import (LAF_px, low_FAM, LAF_h, low_IFM, InjectionMu
 InjectionMultiSum_Auto_pool2, InjectionMultiSum_Auto_pool3, InjectionMultiSum_Auto_pool4, 
 PyramidPoolAgg, TopBasicLayer)
 
-from ultralytics.nn.modules import SimSPPF
+from ultralytics.nn.modules import SimSPPF, ASPP
 
 '''
     Attention改进点更新
@@ -1005,6 +1005,11 @@ def parse_model(d, ch, verbose=True):  # model_dict, input_channels(3)
             args = [c1, *args]
         elif m is SSFF:
             c2 = sum(ch[x] for x in f)
+        elif m is ASPP:
+            c1, c2 = ch[f], args[0]
+            if c2 != nc:  # if not output
+                c2 = make_divisible(min(c2, max_channels) * width, 8)
+            args = [c1, c2, *args[1:]]
         # 新增模块======================
         elif m is nn.BatchNorm2d:
             args = [ch[f]]

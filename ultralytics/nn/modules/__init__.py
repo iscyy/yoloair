@@ -94,6 +94,7 @@ PyramidPoolAgg, TopBasicLayer
 from .CoreV8.Neck.SSFF import SSFF
 
 from .CoreV8.SPPF.SimSPPF import SimConv, SimSPPF
+from .CoreV8.SPPF.ASPP import ASPP
 
 
 
@@ -126,7 +127,7 @@ __all__ = (
     "SPPELAN","RepNCSPELAN4","ASFF_2", "ASFF_2", "BasicBlock",
     "LAF_px", "low_FAM", "LAF_h", "low_IFM", "InjectionMultiSum_Auto_pool1", \
     "InjectionMultiSum_Auto_pool2", "InjectionMultiSum_Auto_pool3", "InjectionMultiSum_Auto_pool4", \
-    "PyramidPoolAgg", "TopBasicLayer", "SSFF",
+    "PyramidPoolAgg", "TopBasicLayer", "SSFF", "SimSPPF", "ASPP", 
     #------------------
     "LightConv",
     "RepConv",

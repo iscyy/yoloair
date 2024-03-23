@@ -54,7 +54,7 @@ from ultralytics.nn.modules import (
 )
 from ultralytics.nn.modules import CPNGhost, CSCGhost, ReNLANGhost, C3_Ghost, C2f_Ghost
 
-from ultralytics.nn.modules import RepVGGBlock, SimConv, RepBlock, Transpose, SimSPPF
+from ultralytics.nn.modules import RepVGGBlock, SimConv, RepBlock, Transpose
 from ultralytics.nn.modules import CReToNeXt
 from ultralytics.nn.modules import CPNMobileViTB, CSCMobileViTB, ReNLANMobileViTB, C3_MobileViTB, C2f_MobileViTB
 
@@ -70,6 +70,8 @@ from ultralytics.nn.modules import ASFF_3, ASFF_2, BasicBlock, SSFF
 from ultralytics.nn.modules import (LAF_px, low_FAM, LAF_h, low_IFM, InjectionMultiSum_Auto_pool1, 
 InjectionMultiSum_Auto_pool2, InjectionMultiSum_Auto_pool3, InjectionMultiSum_Auto_pool4, 
 PyramidPoolAgg, TopBasicLayer)
+
+from ultralytics.nn.modules import SimSPPF
 
 '''
     Attention改进点更新

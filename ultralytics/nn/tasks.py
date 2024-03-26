@@ -73,6 +73,8 @@ PyramidPoolAgg, TopBasicLayer)
 
 from ultralytics.nn.modules import SimSPPF, ASPP, BasicRFB, SPPFCSPC
 
+from ultralytics.nn.modules import CARAFE
+
 '''
     Attention改进点更新
     SimAM,
@@ -1018,6 +1020,11 @@ def parse_model(d, ch, verbose=True):  # model_dict, input_channels(3)
         elif m is SPPFCSPC:
             c1, c2 = ch[f], args[0]
             if c2 != nc:  # if not output
+                c2 = make_divisible(min(c2, max_channels) * width, 8)
+            args = [c1, c2, *args[1:]]
+        elif m is CARAFE:
+            c1, c2 = ch[f], args[0]
+            if c2 != nc:  # if c2 not equal to number of classes (i.e. for Classify() output)
                 c2 = make_divisible(min(c2, max_channels) * width, 8)
             args = [c1, c2, *args[1:]]
         # 新增模块======================

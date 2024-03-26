@@ -111,6 +111,8 @@ from .Improve.Attention.sk import SKAttention
 from .Improve.Attention.soca import SOCA
 from .Improve.Attention.sa import ShuffleAttention
 
+from .CoreV8.Impove.CARAFE import CARAFE
+
 __all__ = (
     "Conv",
     "Conv2",
@@ -130,7 +132,7 @@ __all__ = (
     "SPPELAN","RepNCSPELAN4","ASFF_2", "ASFF_2", "BasicBlock",
     "LAF_px", "low_FAM", "LAF_h", "low_IFM", "InjectionMultiSum_Auto_pool1", \
     "InjectionMultiSum_Auto_pool2", "InjectionMultiSum_Auto_pool3", "InjectionMultiSum_Auto_pool4", \
-    "PyramidPoolAgg", "TopBasicLayer", "SSFF", "SimSPPF", "ASPP",  "BasicRFB",  "SPPFCSPC", 
+    "PyramidPoolAgg", "TopBasicLayer", "SSFF", "SimSPPF", "ASPP",  "BasicRFB",  "SPPFCSPC", "CARAFE", 
     #------------------
     "LightConv",
     "RepConv",

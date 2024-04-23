@@ -14,6 +14,8 @@
 
 该项目基于 官方的YOLOv8项目v8.1版本，使用稳定可靠，环境已配好，适合零基础小白以上的用户使用
 
+配套bilibili视频教程链接：[bilibili: 芒果学AI](https://space.bilibili.com/1532780812) （可 bilibili 私信）
+
 ### 🔥🔥🔥目前为`订阅制` ，现在内测阶段：订阅价 ⭐⭐⭐¥ 129, 名额限100个, 售满为止, 价格比较优惠⭐⭐⭐,  后续恢复为原价 - (需要订阅的联系QQ：**2434798737**) 或者点击链接 通过 👉[bilibili哔哩哔哩](https://space.bilibili.com/1532780812) 私信
 
 1.  🍈该《YOLOv8改进项目ultralyticsPro》基于官方ultralytics项目YOLOv8-最新稳定版本，兼容所有官方的更新
@@ -34,12 +36,30 @@
 ### 项目相关链接
 #### 2.1 视频教程
 
-1. bilibili视频教程链接：[bilibili: https://space.bilibili.com/1532780812](https://space.bilibili.com/1532780812) （可 bilibili 私信）
+bilibili视频教程链接：[bilibili: https://space.bilibili.com/1532780812](https://space.bilibili.com/1532780812) （可 bilibili 私信）
+
+---
+
+- [YOLOv8实验画图：绘制不同模型mAP对比曲线图🎈](https://www.bilibili.com/video/BV1nm41127iZ)
+
+- [YOLOv8实验画图：绘制不同模型Loss曲线图、多项指标图🎈](https://www.bilibili.com/video/BV1Kz42167qk)
+
+- [YOLOv8改进：如何训练自己数据集，如何获取各种领域的数据集🎈](https://www.bilibili.com/video/BV1LF4m1P7EL)
+
+- [YOLOv8改进：ASPP金字塔结构，手把手演示改进🎈](https://www.bilibili.com/video/BV1nE421T742)
+
+- [YOLOv8改进：改进网络的可编辑结构图-PPT绘制, 支持直接修改改进结构🎈](https://www.bilibili.com/video/BV1bm411B7Vk)
+
+- [YOLOv8改进-项目ultralyticsPro介绍-持续更新【YOLOv8原创改进推荐】🎈](https://www.bilibili.com/video/BV1Lt421J7Gc)
+
+- [YOLOv8改进：最简单训练、推理教程演示-使用云服务器-VSCode🎈](https://www.bilibili.com/video/BV1Nm41167i4)
+
+- [YOLO系列改进：总结改进创新的一些相同点，期刊创新点持续更新，浏览了几十篇YOLO改进期刊🎈](https://www.bilibili.com/video/BV1aH4y1J7ig)
 
 ---
 
 ### 🏅️🏅️订阅说明
-目前为`订阅制` ，现在内测阶段：订阅价 ⭐⭐⭐¥ 129, 名额限100个, 价格比较优惠⭐⭐⭐,  后续恢复为原价 - (需要订阅的联系QQ：**2434798737**)
+目前为`订阅制` ，现在内测阶段：订阅价 ⭐⭐⭐¥ 129, 价格比较优惠⭐⭐⭐,  后续恢复为原价 - (需要订阅的联系QQ：**2434798737**)
 
 如果QQ加不上，可以（点击链接 通过 👉[bilibili哔哩哔哩](https://space.bilibili.com/1532780812) 私信，留下你的QQ并备注（yolov8改进项目）
 

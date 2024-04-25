@@ -58,6 +58,25 @@ bilibili视频教程链接：[bilibili: https://space.bilibili.com/1532780812](h
 
 ---
 
+### 🎈🎈代码更新说明
+ultralytics\cfg\models\cfg2024\YOLOv8-Backbone
+ultralytics\cfg\models\cfg2024\YOLOv8-Neck
+ultralytics\cfg\models\cfg2024\YOLOv8-Other
+ultralytics\cfg\models\cfg2024\YOLOv8-金字塔结构改进
+ultralytics\cfg\models\cfg2024\YOLOv8-Attention
+
+最全各种Loss损失函数集成代码 + yaml方式一键调用。
+多种 Head检测头 集成代码 + yaml方式一键调用。
+ATSS 标签分配策略 等 集成到YOLOv8中 + yaml方式一键调用。
+组合改进
+新增script脚本文件
+绘制不同模型Loss曲线图、多项指标图
+绘制不同模型mAP对比曲线图
+绘制不同模型mAP对比曲线图
+
+详情改进目录具体了解可以点击：[YOLOv8改进项目ultralyticsPro 订阅说明](https://www.yuque.com/mangguoai-oaad7/ultralyticspro/yolov8)
+
+
 ### 🏅️🏅️订阅说明
 目前为`订阅制` ，现在内测阶段：订阅价 ⭐⭐⭐¥ 129, 价格比较优惠⭐⭐⭐,  后续恢复为原价 - (需要订阅的联系QQ：**2434798737**)
 

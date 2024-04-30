@@ -1,6 +1,6 @@
 🔥🔥🔥专注于YOLOv8改进，NEW - YOLOv8 🚀 in PyTorch >, Support to improve Backbone, Neck, Head, Loss, IoU, LA, NMS and other modules🚀 Makes YOLOv8 improvements easy again
 
-![在这里插入图片描述](https://cdn.nlark.com/yuque/0/2024/png/42553146/1712844448072-5ff4bf72-3d2f-4053-a8c6-3378f751e0ab.png?x-oss-process=image%2Fformat%2Cwebp)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/direct/fc2f98b7751f4121b52479f0d34b75d9.png#pic_center)
 
 🌟 全新的YOLOv8改进项目**ultralyticsPro**来袭，最新改进点更新🚀2024
 

@@ -9,7 +9,7 @@
 
 
 ----------
-改进项目合集（改进哪个模型订阅哪个模型即可，订阅后可以看对应的《完整版改进内容》）
+改进项目合集（改进哪个模型订阅哪个模型即可，订阅后可以看对应的《完整版改进内容》，比如改进YOLOv10项目，点击以下YOLOv10项目链接即可）
 
 🍉 - [YOLOv8改进项目-ultralyticsPro](https://github.com/iscyy/ultralyticsPro)  👉 **内测价￥129**
 
@@ -18,6 +18,8 @@
 🍈 - [YOLOv10改进项目-YOLOv10Pro](https://github.com/iscyy/YOLOv10Pro)  👉 **内测价￥99**
 
 🍌 - [RT-DETR改进项目-RT-DETR](https://github.com/iscyy/RTDETR)  👉 **内测价￥59**
+
+订阅方式：联系QQ：**2434798737** 或者 👉[bilibili哔哩哔哩](https://space.bilibili.com/1532780812)  私信
 
 ---
 

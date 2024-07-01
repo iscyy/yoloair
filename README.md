@@ -6,6 +6,19 @@
 
 详情改进目录具体了解可以点击：[YOLOv8改进项目ultralyticsPro 订阅说明](https://www.yuque.com/mangguoai-oaad7/ultralyticspro/yolov8)
 
+
+
+----------
+改进项目合集（改进哪个模型订阅哪个模型即可，订阅后可以看对应的《完整版改进内容》）
+
+🍉 - [YOLOv8改进项目-ultralyticsPro](https://github.com/iscyy/ultralyticsPro)  👉 **内测价￥129**
+
+🍇 - [YOLOv9改进项目-YOLOv9Pro](https://github.com/iscyy/yolov9Pro)  👉 **内测价￥69**
+
+🍈 - [YOLOv10改进项目-YOLOv10Pro](https://github.com/iscyy/YOLOv10Pro)  👉 **内测价￥99**
+
+🍌 - [RT-DETR改进项目-RT-DETR](https://github.com/iscyy/RTDETR)  👉 **内测价￥59**
+
 ---
 
 ### 🚀🚀🚀使用说明
@@ -38,6 +51,8 @@
 
 bilibili视频教程链接：[bilibili: https://space.bilibili.com/1532780812](https://space.bilibili.com/1532780812) （可 bilibili 私信）
 
+组合改进🔗 :[YOLOv8多组合改进：同时改进3-4个创新点，项目一键训练4个创新点改进](https://www.bilibili.com/video/BV1VT421i7wN)
+
 ---
 
 - [YOLOv8实验画图：绘制不同模型mAP对比曲线图🎈](https://www.bilibili.com/video/BV1nm41127iZ)
@@ -55,6 +70,8 @@ bilibili视频教程链接：[bilibili: https://space.bilibili.com/1532780812](h
 - [YOLOv8改进：最简单训练、推理教程演示-使用云服务器-VSCode🎈](https://www.bilibili.com/video/BV1Nm41167i4)
 
 - [YOLO系列改进：总结改进创新的一些相同点，期刊创新点持续更新，浏览了几十篇YOLO改进期刊🎈](https://www.bilibili.com/video/BV1aH4y1J7ig)
+
+- 更多视频看 [哔哩哔哩：芒果学AI🎈](https://space.bilibili.com/1532780812)
 
 ---
 

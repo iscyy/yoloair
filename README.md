@@ -29,7 +29,7 @@
 
 配套bilibili视频教程链接：[bilibili: 芒果学AI](https://space.bilibili.com/1532780812) （可 bilibili 私信）
 
-### 🔥🔥🔥目前为`订阅制` ，现在内测阶段：订阅价 ⭐⭐⭐¥ 129, 名额限100个, 售满为止, 价格比较优惠⭐⭐⭐,  后续恢复为原价 - (需要订阅的联系QQ：**2434798737**) 或者点击链接 通过 👉[bilibili哔哩哔哩](https://space.bilibili.com/1532780812) 私信
+### 🔥🔥🔥目前为`订阅制` ，现在内测阶段：订阅价 ⭐⭐⭐¥ 129,(需要订阅的联系QQ：**2434798737**) 或者点击链接 通过 👉[bilibili哔哩哔哩](https://space.bilibili.com/1532780812) 私信
 
 1.  🍈该《YOLOv8改进项目ultralyticsPro》基于官方ultralytics项目YOLOv8-最新稳定版本，兼容所有官方的更新
  

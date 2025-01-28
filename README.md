@@ -1,112 +1,25 @@
-🔥🔥🔥专注于YOLOv8改进，NEW - YOLOv8 🚀 in PyTorch >, Support to improve Backbone, Neck, Head, Loss, IoU, LA, NMS and other modules🚀 Makes YOLOv8 improvements easy again
+---------
+### YOLOv5、YOLOv7、YOLOv8 模型 2024/全系列/最新/改进方式教程（内附源代码）
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/direct/fc2f98b7751f4121b52479f0d34b75d9.png#pic_center)
+🔥 《芒果书》系列改进专栏内的改进文章
+
+专栏地址：[独家全网首发专栏《芒果YOLOv8深度改进教程》](https://blog.csdn.net/qq_38668236/category_12356719.html)🍊
+
+专栏地址：[独家全网首发专栏《芒果YOLOv5深度改进教程》](https://blog.csdn.net/qq_38668236/category_12297448.html)🥝
+
+专栏地址：[独家全网首发专栏《芒果YOLOv7深度改进教程》](https://blog.csdn.net/qq_38668236/category_12219317.html)🍉
+
+-------
+
+## 全新的 UltralyticsPro 项目来袭🚀
+
+项目地址：[https://github.com/iscyy/ultralyticsPro](https://github.com/iscyy/ultralyticsPro)
+
+🔥🔥🔥专注于YOLOv8改进，NEW - YOLOv8 🚀 in PyTorch >, Support to improve Backbone, Neck, Head, Loss, IoU, LA, NMS and other modules🚀 Makes YOLOv8 improvements easy again
 
 🌟 全新的YOLOv8改进项目**ultralyticsPro**来袭，最新改进点更新🚀2024
 
-详情改进目录具体了解可以点击：[YOLOv8改进项目ultralyticsPro 订阅说明](https://www.yuque.com/mangguoai-oaad7/ultralyticspro/yolov8)
-
--------
-🍉🍉🍉**如何获取完整版代码?**  
-该项目的完整版代码, 需要订阅后才能获取, 可以加芒果QQ：**2434798737**，或者点击链接 通过 👉[bilibili哔哩哔哩](https://space.bilibili.com/1532780812) 私信, 进行订阅  
-订阅后，实时获取最新的《项目完整版代码》100%可运行,同时也适合新手 
-----------
-改进项目合集（改进哪个模型订阅哪个模型即可，订阅后可以看对应的《完整版改进内容》，比如改进YOLOv10项目，点击以下YOLOv10项目链接即可）
-🍉 - [YOLOv8改进项目-ultralyticsPro](https://github.com/iscyy/ultralyticsPro)  👉 **内测价￥129**
-🍇 - [YOLOv9改进项目-YOLOv9Pro](https://github.com/iscyy/yolov9Pro)  👉 **内测价￥69**
-🍈 - [YOLOv10改进项目-YOLOv10Pro](https://github.com/iscyy/YOLOv10Pro)  👉 **内测价￥99**
-🍌 - [RT-DETR改进项目-RT-DETR](https://github.com/iscyy/RTDETR)  👉 **内测价￥59**
-
-订阅方式：联系QQ：**2434798737** 或者 👉[bilibili哔哩哔哩](https://space.bilibili.com/1532780812)  私信
-
----
-
-### 🚀🚀🚀使用说明
-
-**本项目持续维护，持续更新原创内容**
-
-该项目基于 官方的YOLOv8项目v8.1版本，使用稳定可靠，环境已配好，适合零基础小白以上的用户使用
-
-配套bilibili视频教程链接：[bilibili: 芒果学AI](https://space.bilibili.com/1532780812) （可 bilibili 私信）
-
-### 🔥🔥🔥目前为`订阅制` ，现在内测阶段：订阅价 ⭐⭐⭐¥ 129,(需要订阅的联系QQ：**2434798737**) 或者点击链接 通过 👉[bilibili哔哩哔哩](https://space.bilibili.com/1532780812) 私信
-
-1.  🍈该《YOLOv8改进项目ultralyticsPro》基于官方ultralytics项目YOLOv8-最新稳定版本，兼容所有官方的更新
- 
-2.  🍉订阅该《YOLOv8改进项目ultralyticsPro》即可获取本项目里面改进点对应的《核心代码模块文件》，加入《改进后的核心代码文件》就可以直接运行。保证本项目中已有的改进点都能正常运行实验 
-3.  🏅️用户可以添加博主的联系方式 QQ：**2434798737** ⭐⭐⭐（或者点击链接 通过 👉[bilibili哔哩哔哩](https://space.bilibili.com/1532780812) 私信 
-4.  🚀该项目持续更新：内容包括：改进 **新的标签分配策略、检测头Head、损失函数Loss、主干Backbone、Neck部分、分类损失函数、NMS改进、写作技巧、性能指标技巧** 
-5.  🍌在此基础上新建了一个《芒果YOLOv8项目改进交流群》便于项目改进交流和答疑，并在群里同步更新新的内容, 之前在CSDN订阅过·YOLOv8深度改进专栏·和·剑指YOLOv8改进专栏·可以免费使用该项目  
-6.  🌰新增以《视频教程》辅助来说明应该怎么改 
-7.  🌟多任务改进篇：支持**OBB旋转检测、姿态估计、图像分割任务、图像分类**等各类改进 
-8.  🎈该项目为YOLOv8改进项目, 目前为正式阶段，**欢迎订阅**，可以加芒果QQ：**2434798737**，或者点击链接 通过 👉[bilibili哔哩哔哩](https://space.bilibili.com/1532780812) 私信, 进行订阅，订阅后，实时获取最新的已有的《改进的核心模块代码文件》 
-9.  🏆已经订阅了的用户 可以进《芒果改进YOLOv8交流群》 同时**获取**本项目剩下对应的《核心代码模块文件》 
-10.  🥭目前该项目《ultralyticsPro》有部分改进为免费使用的，用户可以直接试用
-11.  🍊重点：支持该项目相关改进的答疑服务
----
-
-### 项目相关链接
-#### 2.1 视频教程
-
-bilibili视频教程链接：[bilibili: https://space.bilibili.com/1532780812](https://space.bilibili.com/1532780812) （可 bilibili 私信）
-
-组合改进🔗 :[YOLOv8多组合改进：同时改进3-4个创新点，项目一键训练4个创新点改进](https://www.bilibili.com/video/BV1VT421i7wN)
----
-
-- [YOLOv8实验画图：绘制不同模型mAP对比曲线图🎈](https://www.bilibili.com/video/BV1nm41127iZ)
-
-- [YOLOv8实验画图：绘制不同模型Loss曲线图、多项指标图🎈](https://www.bilibili.com/video/BV1Kz42167qk)
-- [YOLOv8改进：如何训练自己数据集，如何获取各种领域的数据集🎈](https://www.bilibili.com/video/BV1LF4m1P7EL)
-
-- [YOLOv8改进：ASPP金字塔结构，手把手演示改进🎈](https://www.bilibili.com/video/BV1nE421T742)
-
-- [YOLOv8改进：改进网络的可编辑结构图-PPT绘制, 支持直接修改改进结构🎈](https://www.bilibili.com/video/BV1bm411B7Vk)
-
-- [YOLOv8改进-项目ultralyticsPro介绍-持续更新【YOLOv8原创改进推荐】🎈](https://www.bilibili.com/video/BV1Lt421J7Gc)
-
-- [YOLOv8改进：最简单训练、推理教程演示-使用云服务器-VSCode🎈](https://www.bilibili.com/video/BV1Nm41167i4)
-
-- [YOLO系列改进：总结改进创新的一些相同点，期刊创新点持续更新，浏览了几十篇YOLO改进期刊🎈](https://www.bilibili.com/video/BV1aH4y1J7ig)
-
-- 更多视频看 [哔哩哔哩：芒果学AI🎈](https://space.bilibili.com/1532780812)
-
----
-
-### 🎈🎈代码更新说明
-ultralytics\cfg\models\cfg2024\YOLOv8-Backbone
-ultralytics\cfg\models\cfg2024\YOLOv8-Neck
-ultralytics\cfg\models\cfg2024\YOLOv8-Other
-ultralytics\cfg\models\cfg2024\YOLOv8-金字塔结构改进
-ultralytics\cfg\models\cfg2024\YOLOv8-Attention
-
-最全各种Loss损失函数集成代码 + yaml方式一键调用。
-多种 Head检测头 集成代码 + yaml方式一键调用。
-ATSS 标签分配策略 等 集成到YOLOv8中 + yaml方式一键调用。
-组合改进
-新增script脚本文件
-绘制不同模型Loss曲线图、多项指标图
-绘制不同模型mAP对比曲线图
-绘制不同模型mAP对比曲线图
-
-详情改进目录具体了解可以点击：[YOLOv8改进项目ultralyticsPro 订阅说明](https://www.yuque.com/mangguoai-oaad7/ultralyticspro/yolov8)
-
-
-### 🏅️🏅️订阅说明
-目前为`订阅制` ，现在内测阶段：订阅价 ⭐⭐⭐¥ 129, 价格比较优惠⭐⭐⭐,  后续恢复为原价 - (需要订阅的联系QQ：**2434798737**)
-
-如果QQ加不上，可以（点击链接 通过 👉[bilibili哔哩哔哩](https://space.bilibili.com/1532780812) 私信，留下你的QQ并备注（yolov8改进项目）
-
-![46f4207a62903e320d1ec96a160697d.jpg](https://cdn.nlark.com/yuque/0/2024/jpeg/42553146/1711106875724-81fbf441-e6b2-4a67-b98d-76ac81c19909.jpeg?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_24%2Ctext_dWx0cmFseXRpY3NQcm8%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10%2Fformat%2Cwebp)
-扫描QQ二维码也可
-### YOLOv8改进 - 目录（2024.04最新版本）
-
-主项目在 **UltralyticsPro** 项目中，点击链接即可
-[GitHub - iscyy/ultralyticsPro: 🔥🔥🔥专注于改进YOLOv8模型，NEW - YOLOv8 🚀 RT-DETR 🥇 in PyTorch >, Support to improve backbone, neck, head, loss, IoU, NMS and other modules🚀](https://github.com/iscyy/ultralyticsPro)
-
----
-
-
-### 改进YOLOv8 免费内容<br />本项目持续会更新一些免费的改进点，每周都会更新<br />
+**一、 改进YOLOv8 免费内容**<br />本项目持续会更新一些免费的改进点，每周都会更新<br />
 
 3.22更新：
 注意力机制：[ultralytics/cfg/models/cfg2024/YOLOv8-Attention](https://github.com/iscyy/ultralyticsPro/tree/main/ultralytics/cfg/models/cfg2024/YOLOv8-Attention)  
@@ -127,56 +40,742 @@ BasicRFB、
 ASPP、  
 SPPFCSPC  
 
--------
+更多更新，详细点击👉：[https://github.com/iscyy/ultralyticsPro](https://github.com/iscyy/ultralyticsPro)
 
-bilibili视频教程：[bilibili: https://space.bilibili.com/1532780812](https://space.bilibili.com/1532780812)
+----------------------------
 
--------------------------------
+### 🌟 全新的YOLOAir2024版本来袭，最新改进点更新🚀2024
 
-### YOLOv8改进 - 目录（2024.03最新版本）
+---------
 
-主项目在 **UltralyticsPro** 项目中，点击链接即可
-[GitHub - iscyy/ultralyticsPro: 🔥🔥🔥专注于改进YOLOv8模型，NEW - YOLOv8 🚀 RT-DETR 🥇 in PyTorch >, Support to improve backbone, neck, head, loss, IoU, NMS and other modules🚀](https://github.com/iscyy/ultralyticsPro)
+YOLOv5项目更新
 
----
+2024.03
 
-#### 4.1. IoU损失函数改进
-**项目内容链接👉：**[ultralyticsPro/YOLOv8-Loss](https://github.com/iscyy/ultralyticsPro/tree/main/ultralytics/cfg/models/cfg2024/YOLOv8-Loss)
-**说明：**
-[YOLOv8损失函数Loss改进（ultralyticsPro）](https://www.yuque.com/mangguoai-oaad7/gyvqf9/epr1fhzuultgwd6d?view=doc_embed)
+新增Dysample上采样改进点：ICCV2023论文：[Dysample上采样改进](./configs2024/yolov5-other/yolov5-dysample.yaml)
 
----
+## YOLO Air : Makes improvements easy again
 
-#### 4.2 检测头Head改进
-**项目内容链接👉：**[ultralyticsPro/YOLOv8-Head](https://github.com/iscyy/ultralyticsPro/tree/main/ultralytics/cfg/models/cfg2024/YOLOv8-Head)
-**说明：**
-[YOLOv8检测头Head改进（ultralyticsPro）](https://www.yuque.com/mangguoai-oaad7/gyvqf9/nbimnvc2eshm36wa?view=doc_embed)
+<div align="center">
+  <p>
+    <a align="center" href="https://github.com/iscyy/yoloair" target="_blank">
+      <img width="850" src="https://img-blog.csdnimg.cn/11d5f1f403f74cff9c2f70a0c3b92de4.png"></a>
+    <br><br>
+  </p>
+  <p>YOLOAir是一个基于PyTorch的YOLO算法库。统一模型代码框架、统一应用、统一改进、易于模块组合、构建更强大的网络模型。</p>
 
----
+  简体中文 | [English](./README_EN.md)
 
-#### 4.3 主干网络改进Backbone
-**项目内容链接👉：**[ultralyticsPro/YOLOv8-Backbone](https://github.com/iscyy/ultralyticsPro/tree/main/ultralytics/cfg/models/cfg2024/YOLOv8-Backbone)
-**说明：**
-[YOLOv8主干Backbone改进（ultralyticsPro）](https://www.yuque.com/mangguoai-oaad7/gyvqf9/dfkisg9x477kltf4?view=doc_embed)
+  ![](https://img.shields.io/badge/News-2022-red)  ![](https://img.shields.io/badge/Update-YOLOAir-orange) ![](https://visitor-badge.glitch.me/badge?page_id=iscyy.yoloair)  
 
----
+  #### **支持**
 
-#### 4.4 特征融合网络改进Neck
-**项目内容链接👉：**[ultralyticsPro/YOLOv8-Neck](https://github.com/iscyy/ultralyticsPro/tree/main/ultralytics/cfg/models/cfg2024/YOLOv8-Neck)
-**说明：**
-[YOLOv8特征融合Neck改进（ultralyticsPro）](https://www.yuque.com/mangguoai-oaad7/gyvqf9/bwikh0og6eam5ikv?view=doc_embed)
-#### 4.5 金字塔结构改进Neck
-这部分比较简单，直接更新到[ultralyticsPro](https://github.com/iscyy/ultralyticsPro/tree/main)项目中
+![https://github.com/iscyy/yoloair](https://img.shields.io/badge/Support-YOLOv5-red) ![https://github.com/iscyy/yoloair](https://img.shields.io/badge/Support-YOLOv7-brightgreen) ![https://github.com/iscyy/yoloair](https://img.shields.io/badge/Support-YOLOv6-blueviolet) ![https://github.com/iscyy/yoloair](https://img.shields.io/badge/Support-YOLOX-yellow) ![https://github.com/iscyy/yoloair](https://img.shields.io/badge/Support-PPYOLOE-007d65) ![https://github.com/iscyy/yoloair](https://img.shields.io/badge/Support-YOLOv4-green) ![https://github.com/iscyy/yoloair](https://img.shields.io/badge/Support-TOOD-6a6da9) 
+![https://github.com/iscyy/yoloair](https://img.shields.io/badge/Support-YOLOv3-yellowgreen) ![https://github.com/iscyy/yoloair](https://img.shields.io/badge/Support-YOLOR-lightgrey) ![https://github.com/iscyy/yoloair](https://img.shields.io/badge/Support-Scaled_YOLOv4-ff96b4) ![](https://img.shields.io/badge/Support-Transformer-9cf) ![https://github.com/iscyy/yoloair](https://img.shields.io/badge/Support-PPYOLO-lightgrey) ![https://github.com/iscyy/yoloair](https://img.shields.io/badge/Support-PPYOLOv2-yellowgreen) ![https://github.com/iscyy/yoloair](https://img.shields.io/badge/Support-PPYOLOEPlus-d5c59f) ![https://github.com/iscyy/yoloair](https://img.shields.io/badge/Support-MLP-ff69b4) ![https://github.com/iscyy/yoloair](https://img.shields.io/badge/Support-Attention-green)
 
-#### 4.6 标签分配策略改进
-[YOLOv8标签分配策略改进（ultralyticsPro）](https://www.yuque.com/mangguoai-oaad7/ultralyticspro/usfhla4nzu1pio6z)
+[特性🚀](#主要特性) • [使用🍉](#使用) • [文档📒](https://github.com/iscyy/yoloair) • [报告问题🌟](https://github.com/iscyy/yoloair/issues/new) • [更新💪](#-to-do) • [讨论✌️](https://github.com/iscyy/yoloair/discussions)  
+• [YOLO改进方式教程及原理参考🚀](#yolo网络模型具体改进方式教程及原理参考)•
 
-**二、 改进YOLOv8 订阅内容**<br />
 
-改进点已经上传网络配置文件，只需要加上 ⭐**核心代码文件**，即可以一键运行。获取方式为：**订阅制**，畅享ultralyticsPro项目完整版。
+![https://github.com/iscyy/yoloair](https://img-blog.csdnimg.cn/f7045ecc4f90430cafc276540dddd702.gif#pic_center)
 
-🏅️详情了解，可以添加博主的联系方式 QQ：**2434798737** ⭐（或者点击链接 通过 👉[bilibili哔哩哔哩](https://space.bilibili.com/1532780812) 私信
+</div>
 
-**本项目持续维护，持续更新原创内容**
+## Introduction
 
----
+**模型多样化**: 基于不同网络模块构建不同检测网络模型。
+
+**模块组件化**: 帮助用户自定义快速组合Backbone、Neck、Head，使得网络模型多样化，助力科研改进检测算法、模型改进，网络排列组合🏆。构建强大的网络模型。
+
+**统一模型代码框架、统一应用方式、统一调参、统一改进、集成多任务、易于模块组合、构建更强大的网络模型**。
+
+内置集成YOLOv5、YOLOv7、YOLOv6、YOLOX、YOLOR、Transformer、PP-YOLO、PP-YOLOv2、PP-YOLOE、PP-YOLOEPlus、Scaled_YOLOv4、YOLOv3、YOLOv4、YOLO-Face、TPH-YOLO、YOLOv5Lite、SPD-YOLO、SlimNeck-YOLO、PicoDet等模型网络结构... 
+集成多种检测算法 和 相关多任务模型 使用统一模型代码框架，**集成在 YOLOAir 库中，统一应用方式**。便于科研者用于论文算法模型改进，模型对比，实现网络组合多样化。包含轻量化模型和精度更高的模型，根据场景合理选择，在精度和速度俩个方面取得平衡。同时该库支持解耦不同的结构和模块组件，让模块组件化，通过组合不同的模块组件，用户可以根据不同数据集或不同业务场景自行定制化构建不同检测模型。
+
+支持集成多任务，包括目标检测、实例分割、图像分类、姿态估计、人脸检测、目标跟踪等任务
+
+<img src='https://img-blog.csdnimg.cn/1589c7f744004401b9d88132de35abe8.jpeg#pic_center' alt='ingishvcn'>
+
+**Star🌟、Fork** 不迷路，同步更新。![](https://img.shields.io/github/stars/iscyy/yoloair?style=social)
+
+项目地址🌟: https://github.com/iscyy/yoloair
+
+
+部分改进说明教程🌟: [https://github.com/iscyy/yoloair/wiki/Improved-tutorial-presentation](https://github.com/iscyy/yoloair/wiki/Improved-tutorial-presentation)
+______________________________________________________________________
+
+### 🌟 Beta Supported Updates
+下列功能 YOLOAir-Beta版本内测 已支持🔥
+- 其他 功能🌟
+______________________________________________________________________
+
+### 🌟 To Do
+
+- 支持多任务, 包括 目标检测、分类、分割、姿态估计、人脸检测、目标跟踪 等任务
+______________________________________________________________________
+
+### 主要特性🚀
+
+🚀支持更多的YOLO系列算法模型改进(持续更新...)
+
+YOLOAir 算法库汇总了多种主流YOLO系列检测模型，一套代码集成多种模型: 
+
+- 内置集成 YOLOv5 模型网络结构、YOLOv7 模型网络结构、 YOLOv6 模型网络结构、PP-YOLO 模型网络结构、PP-YOLOE 模型网络结构、PP-YOLOEPlus 模型网络结构、YOLOR 模型网络结构、YOLOX 模型网络结构、ScaledYOLOv4 模型网络结构、YOLOv4 模型网络结构、YOLOv3 模型网络结构、YOLO-FaceV2模型网络结构、TPH-YOLOv5模型网络结构、SPD-YOLO模型网络结构、SlimNeck-YOLO模型网络结构、YOLOv5-Lite模型网络结构、PicoDet模型网络结构等持续更新中...
+
+
+🚀支持更多的网络模型组件
+- 如表
+
+<details open>
+<div align="center">
+  <b>YOLOAir Structural Module Components</b>
+</div>
+<table align="center">
+  <tbody>
+    <tr align="center" valign="bottom">
+      <td>
+        <b>Backbones</b>
+      </td>
+      <td>
+        <b>Necks</b>
+      </td>
+      <td>
+        <b>Head</b>
+      </td>
+    </tr>
+    <tr valign="top">
+      <td>
+      <ul>
+        <li>CSPDarkNet系列</li>
+        <li>HorNet系列</li>
+        <li>ResNet系列</li>
+        <li>RegNet系列</li>
+        <li>ShuffleNet系列</li>
+        <li>RepLKNet系列</li>
+        <li>MobileNet系列</li>
+        <li>EfficientNet系列</li>
+        <li>ConvNext系列</li>
+        <li>Ghost系列</li>
+        <li>RepVGG系列</li>
+        <li>transformer系列</li>
+      </ul>
+      </td>
+      <td>
+      <ul>
+        <li>PANet</li>
+        <li>RepPAN</li>
+        <li>BiFPN</li>
+        <li>CSPPAN</li>
+        <li>SlimNeck</li>
+        <li>ELANPAN</li>
+        <li>GSNeck</li>
+      </ul>
+      </td>
+      <td>
+        <ul>
+          <li>YOLOv4Head</li>
+          <li>YOLOv5Head</li>
+          <li>YOLOv6 Efficient decoupled head </li>
+          <li>YOLOv7 IDetect Head</li>
+          <li>YOLOv7 IAuxDetect Head</li>
+          <li>YOLOX DetectX Head</li>
+          <li>自适应空间特征融合 检测头ASFF Head</li>
+          <li>YOLOR 隐式学习 Head</li>
+          <li>EH-Head</li>
+          <li>Dual Weighting Head</li>
+          <li>FCOS Head</li>
+          <li>Dynamic Head</li>
+          ...
+        </ul>
+      </td>
+    </tr>
+</td>
+    </tr>
+  </tbody>
+</table>
+
+</details>
+
+
+<details open>
+<div align="center">
+  <b>YOLOAir Module Components</b>
+</div>
+<table align="center">
+  <tbody>
+    <tr align="center" valign="bottom">
+      <td>
+        <b>Attention注意力机制</b>
+      </td>
+      <td>
+        <b>标签分配策略</b>
+      </td>
+      <td>
+        <b>IoU损失函数</b>
+      </td>
+    </tr>
+    <tr valign="top">
+      <td>
+      <ul>
+        <li>Self Attention</li>
+        <li>Contextual Transformer</li>
+        <li>Bottleneck Transformer</li>
+        <li>S2-MLP Attention</li>
+        <li>AxialAttention</li>
+        <li>DANet</li>
+        <li>DoubleAttention</li>
+        <li>GlobalContextBlock</li>
+        <li>ParNetAttention</li>
+        <li>PolarizedSelfAttention</li>
+        <li>SpatialGroupEnhance copy</li>
+        <li>TripletAttention</li>
+        <li>SK Attention</li>
+        <li>CBAM Attention</li>
+        <li>SE Attention</li>
+        <li>Coordinate attention</li>
+        <li>NAM Attention</li>
+        <li>GAM Attention</li>
+        <li>ECA Attention</li>
+        <li>Shuffle Attention</li>
+        <li>CrissCrossAttention</li>
+        <li>SOCAttention</li>
+        <li>SimAM Attention</li>
+        <li>CrissCrossAttention</li>
+      </ul>
+      </td>
+      <td>
+      <ul>
+          <li>Multi Anchor策略</li>
+          <li>YOLOv5 标签分配策略</li>
+          <li>SimOTA 标签分配策略</li>
+          <li>YOLOv7 标签分配策略</li>
+          <li>FreeAnchor 标签分配策略</li>
+          <li>AutoAssign 标签分配策略</li>
+          <li>Dual Weighting 标签分配策略</li>
+          <li>Probabilistic Anchor Assignment 锚分配策略</li>
+          <li>其他改进的标签分配策略</li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <li>CIoU</li>
+          <li>DIoU</li>
+          <li>GIoU</li>
+          <li>EIoU</li>
+          <li>SIoU</li>
+          <li>alpha IOU</li>      
+          ...
+        </ul>
+      </td>
+    </tr>
+</td>
+    </tr>
+  </tbody>
+</table>
+
+</details>
+
+
+<details open>
+<div align="center">
+  <b>Module Components</b>
+</div>
+<table align="center">
+  <tbody>
+    <tr align="center" valign="bottom">
+      <td>
+        <b>Loss</b>
+      </td>
+      <td>
+        <b>NMS</b>
+      </td>
+      <td>
+        <b>数据增强</b>
+      </td>
+    </tr>
+    <tr valign="top">
+      <td>
+      <ul>
+        <li>ComputeLoss(v3)</li>
+        <li>ComputeLoss(v4)</li>
+        <li>ComputeLoss(v5)</li>
+        <li>ComputeLoss(v6)</li>
+        <li>ComputeLoss(X)</li>
+        <li>ComputeLossAuxOTA(v7)</li>
+        <li>ComputeLossOTA(v7)</li>
+      </ul>
+      </td>
+      <td>
+      <ul>
+        <li>NMS</li>
+        <li>Merge-NMS</li>
+        <li>Soft-NMS</li>
+        <li>CIoU_NMS</li>
+        <li>DIoU_NMS</li>
+        <li>GIoU_NMS</li>
+        <li>EIoU_NMS</li>
+        <li>SIoU_NMS</li>
+        <li>Soft-SIoUNMS</li>
+        <li>Soft-CIoUNMS</li>
+        <li>Soft-DIoUNMS</li>
+        <li>Soft-EIoUNMS</li>
+        <li>Soft-GIoUNMS</li>
+        <li>SimSPPF</li>
+        <li>SimSPPF</li>
+        <li>SimSPPF</li>  
+      </ul>
+      </td>
+      <td>
+        <ul>
+          <li>Mosaic</li>
+          <li>Copy paste</li>
+          <li>Random affine(Rotation, Scale, Translation and Shear)</li>
+          <li>MixUp</li>
+          <li>HSV</li>
+          <li>Random horizontal flip</li> 
+          ...
+        </ul>
+      </td>
+    </tr>
+</td>
+    </tr>
+  </tbody>
+</table>
+
+</details>
+
+
+<details open>
+<div align="center">
+  <b>YOLOAir Module Components</b>
+</div>
+<table align="center">
+  <tbody>
+    <tr align="center" valign="bottom">
+      <td>
+        <b>空间金字塔池化结构</b>
+      </td>
+      <td>
+        <b>模块化组件</b>
+      </td>
+      <td>
+        <b>AnchorBased / AnchorFree</b>
+      </td>
+    </tr>
+    <tr valign="top">
+      <td>
+        <ul>
+        <li>SPP</li>
+        <li>SPPF</li>
+        <li>ASPP</li>
+        <li>RFB</li>
+        <li>SPPCSPC</li>
+        <li>SPPFCSPC</li>
+        <li>SimSPPF</li>
+      </ul>
+      </td>
+      <td>
+        <ul>
+          <li>Conv, GhostConv, Bottleneck, GhostBottleneck, SPP, SPPF, DWConv, MixConv2d, Focus, CrossConv,BottleneckCSP, C3, C3TR, C3SPP, C3Ghost, C3HB, C3RFEM, MultiSEAM, SEAM, C3STR, SPPCSPC, RepConv, BoT3, Air, CA, CBAM, Involution, Stem, ResCSPC, ResCSPB, ResXCSPB, ResXCSPC, BottleneckCSPB, BottleneckCSPC, ASPP, BasicRFB, SPPCSPC_group, HorBlock, CNeB,C3GC ,C3C2, nn.ConvTranspose2d, DWConvblock, RepVGGBlock, CoT3, ConvNextBlock, SPPCSP, BottleneckCSP2, DownC, BottleneckCSPF, RepVGGBlock, ReOrg, DWT, MobileOne,HorNet...</li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <li>YOLOv5、YOLOv7、YOLOv3、YOLOv4、YOLOR、ScaledYOLOv4、PPYOLO、PPYOLOv2、Improved-YOLOv5、Improved-YOLOv7</li> 
+          <li>YOLOX、YOLOv6 (Paper)、PPYOLOE、PPYOLOE+</li>
+          ...
+        </ul>
+      </td>
+    </tr>
+</td>
+    </tr>
+  </tbody>
+</table>
+</details>
+
+
+<details>
+
+🚀支持更多Backbone
+
+-  CSPDarkNet系列   
+-  HorNet系列  
+-  ResNet系列  
+-  RegNet 系列  
+-  ShuffleNet系列  
+-  Ghost系列  
+-  MobileNet系列  
+-  EfficientNet系列  
+-  ConvNext系列  
+-  RepLKNet系列  
+-  重参数化系列  
+-  RepVGG系列  
+-  RepMLP系列  
+-  ACNet系列
+-  RepConv系列  
+-  OREPA系列
+-  Mobileone系列  
+-  自注意力Transformer系列  
+-  MobileViT系列
+-  BoTNet-Transfomrer  
+-  CoTNet-Transfomrer  
+-  Swin-Transfomrer  
+-  Swin-Transfomrer(v2)  
+-  以及其他trans系列
+持续更新中🎈🚀🚀🚀
+注: (YOLOAir(Beta)🔥 已经完成更新 20+ 种Transformer系列主干网络、多种MLP网络 以及 绝大部分重参数化结构模型网络)
+
+🚀支持更多Neck
+- FPN  
+- PANet  
+- RepPAN
+- BiFPN
+- CSPPAN
+- SlimNeck
+- ELANPAN  
+ 持续更新中🎈
+
+🚀支持更多检测头Head  
+-  YOLOv4、YOLOv5 Head检测头;
+-  YOLOR 隐式学习Head检测头;
+-  YOLOX的解耦合检测头Decoupled Head、DetectX Head;
+-  自适应空间特征融合 检测头ASFF Head;
+-  YOLOv6-v2.0 Efficient decoupled head;
+-  YOLOv7检测头IAuxDetect Head, IDetect Head等;
+
+-  其他不同检测头
+
+🚀支持更多即插即用的注意力机制Attention
+- 在网络任何部分即插即用式使用注意力机制
+- Self Attention  
+- Contextual Transformer  
+- Bottleneck Transformer  
+- S2-MLP Attention  
+- SK Attention  
+- CBAM Attention  
+- SE Attention  
+- Coordinate attention  
+- NAM Attention  
+- GAM Attention  
+- ECA Attention  
+- Shuffle Attention  
+- CrissCrossAttention  
+- Coordinate attention  
+- SOCAttention  
+- SimAM Attention 
+持续更新中🎈  
+
+- 🔥🔥🔥 重磅！！！作为开源项目补充，推荐一个注意力算法代码库[External-Attention](https://github.com/xmu-xiaoma666/External-Attention-pytorch)，里面汇总整理很全面，包含各种Attention等代码，代码简洁易读，一行代码实现Attention机制。
+
+🚀更多空间金字塔池化结构  
+- SPP
+- SPPF
+- ASPP
+- RFB
+- SPPCSPC  
+- SPPFCSPC  
+- SimSPPF
+持续更新中🎈    
+
+🚀支持更多Loss   
+- ComputeLoss  
+- ComputeLoss(v5)  
+- ComputeLoss(v6)  
+- ComputeLoss(X)  
+- ComputeLossAuxOTA(v7)  
+- ComputeLossOTA(v7)  
+- ComputeNWDLoss  
+- 其他Loss
+
+🚀支持 Anchor-base 和 Anchor-Free  
+
+- 🌟 YOLOv5、YOLOv7、YOLOv3、YOLOv4、YOLOR、ScaledYOLOv4、PPYOLO、PPYOLOv2、Improved-YOLOv5、Improved-YOLOv7
+
+- 🌟 YOLOX、YOLOv6 (Paper)、PPYOLOE、PPYOLOE+
+
+🚀支持多种标签分配策略  
+- Multi Anchor策略
+- YOLOv5 标签分配策略
+- SimOTA 标签分配策略
+- YOLOv7 标签分配策略
+- AutoAssign 标签分配策略🌟
+- Dual Weighting 标签分配策略🌟
+- FreeAnchor 标签分配策略🌟
+- 其他改进的标签分配策略
+持续更新中🎈  
+
+🚀支持加权框融合(WBF)  
+
+🚀 内置多种网络模型模块化组件  
+Conv, GhostConv, Bottleneck, GhostBottleneck, SPP, SPPF, DWConv, MixConv2d, Focus, CrossConv,BottleneckCSP, C3, C3TR, C3SPP, C3Ghost, C3HB, C3RFEM, MultiSEAM, SEAM, C3STR, SPPCSPC, RepConv, BoT3, Air, CA, CBAM, Involution, Stem, ResCSPC, ResCSPB, ResXCSPB, ResXCSPC, BottleneckCSPB, BottleneckCSPC, ASPP, BasicRFB, SPPCSPC_group, HorBlock, CNeB,C3GC ,C3C2, nn.ConvTranspose2d, DWConvblock, RepVGGBlock, CoT3, ConvNextBlock, SPPCSP, BottleneckCSP2, DownC, BottleneckCSPF, RepVGGBlock, ReOrg, DWT, MobileOne,HorNet...等详细代码 **./models/common.py文件** 内  
+
+🚀支持更多IoU损失函数  
+- CIoU  
+- DIoU  
+- GIoU  
+- EIoU  
+- SIoU  
+- alpha IOU  
+持续更新中🎈    
+
+🚀支持更多NMS  
+- NMS  
+- Merge-NMS  
+- Soft-NMS  
+- CIoU_NMS  
+- DIoU_NMS  
+- GIoU_NMS  
+- EIoU_NMS  
+- SIoU_NMS  
+- Soft-SIoUNMS、Soft-CIoUNMS、Soft-DIoUNMS、Soft-EIoUNMS、Soft-GIoUNMS等;    
+持续更新中🎈    
+
+🚀支持更多数据增强  
+- Mosaic、Copy paste、Random affine(Rotation, Scale, Translation and Shear)、MixUp、Augment HSV(Hue, Saturation, Value、Random horizontal flip  
+
+</details>
+
+🚀支持加载YOLOv3、YOLOv4、YOLOv5、YOLOv7、YOLOR、Scaled_YOLO等网络的官方预训练权重进行迁移学习
+
+🚀 YOLO系列网络模型热力图可视化(GardCAM、GardCAM++等)
+支持YOLOv3、、YOLOv3-SPP、YOLOv4、YOLOv5、YOLOR、YOLOv7Scaled_YOLOv4、TPH-YOLO、SPD-YOLO以及自定义网络模型等模型 (YOLOAir(Beta版本内测)🔥已支持)
+
+🚀主流网络模型结构图汇总: [模型🔗](https://github.com/iscyy/yoloair/blob/main/docs/document/model_.md) 
+
+以上组件模块使用统一模型代码框架、统一任务形式、统一应用方式，**模块组件化**🚀 可以帮助用户自定义快速组合Backbone、Neck、Head，使得网络模型多样化，助力科研改进检测算法，构建更强大的网络模型。
+
+说明: 以上主要特性支持 包括 Main版本 和 Beta版本，部分特性暂时只完成更新在 Beta 中，不是所有更新都直接在 Main 中，后续 Beta 版本内测之后逐渐加入到 Main版本中。
+
+______________________________________________________________________
+
+### 内置网络模型配置支持✨
+
+🚀包括基于 YOLOv5、YOLOv7、YOLOX、YOLOR、YOLOv3、YOLOv4、Scaled_YOLOv4、PPYOLO、PPYOLOE、PPYOLOEPlus、Transformer、YOLO-FaceV2、PicoDet、YOLOv5-Lite、TPH-YOLOv5、SPD-YOLO等**其他多种改进网络结构等算法模型**的模型配置文件
+______________________________________________________________________
+
+### 效果预览🚀
+
+|目标检测|目标分割|
+:-------------------------:|:-------------------------:
+<img src='https://img-blog.csdnimg.cn/0b04579f80d145d7bd2e854753e9f367.jpeg' width='300px' height='180px'  alt='ingishvcn'>  |  <img src='https://img-blog.csdnimg.cn/adb10e3c47e440f9acf4a183df9acf05.jpeg#pic_center' width='300px' height='180px'  alt='ingishvcn'>
+
+|图像分类|实例分割|
+:-------------------------:|:-------------------------:
+<img src='https://img-blog.csdnimg.cn/b1ca7795b70c4b6086b5e6b43b687c1b.jpeg#pic_center' width='300px' height='180px'  alt='ingishvcn'>  |  <img src='https://img-blog.csdnimg.cn/d29f6d6fa0624c5cacf107bd5d1a5fa2.jpeg#pic_center' width='300px' height='180px'  alt='ingishvcn'>
+
+|目标分割|目标跟踪|
+:-------------------------:|:-------------------------:
+<img src='https://img-blog.csdnimg.cn/0ce7c7584f2149c980d7e292fc1fcd24.jpeg#pic_center' width='300px' height='180px'  alt='ingishvcn'>  |  <img src='https://img-blog.csdnimg.cn/d9ae8953fb394a74a6b1096a401fc315.jpeg#pic_center' width='300px' height='180px'  alt='ingishvcn'>
+
+|姿态估计|人脸检测|
+:-------------------------:|:-------------------------:
+<img src='https://img-blog.csdnimg.cn/01f41103dc6c416aaeeb4577b87bb363.gif#pic_center' width='300px' height='260px' alt='ingishvcn'>  |  <img src='https://img-blog.csdnimg.cn/d18a095621b64da69d2a712fa5613976.gif#pic_center' width='300px' height='260px'   alt='ingishvcn'>
+
+|热力图01|热力图02|
+:-------------------------:|:-------------------------:
+<img src='https://img-blog.csdnimg.cn/eef8f911702242a5bb3e10a2e3188ca6.jpeg#pic_center' width='300px' height='180px' alt='ingishvcn'>  |  <img src='https://img-blog.csdnimg.cn/a22986632c25462cbe6abddc75a01ca5.jpeg#pic_center' width='300px' height='180px'   alt='ingishvcn'>
+
+
+![yolo](https://img-blog.csdnimg.cn/b962fcd1bfa841399226ca564f22a385.gif#pic_center)
+### 预训练权重🚀
+
+- YOLOv5
+https://github.com/ultralytics/yolov5/releases/tag/v6.1
+
+- YOLOv4
+https://github.com/iscyy/yoloair/releases/tag/v1.0
+
+- YOLOv3
+https://github.com/iscyy/yoloair/releases/tag/v1.0
+
+- YOLOR
+https://github.com/iscyy/yoloair/releases/tag/v1.0
+
+- Scaled_YOLO
+https://github.com/iscyy/yoloair/releases/tag/v1.0
+
+- YOLOv7
+https://github.com/iscyy/yoloair/releases/tag/v1.0
+
+______________________________________________________________________
+
+## 使用🍉
+
+**About the code.** Follow the design principle of [YOLOv5](https://github.com/ultralytics/yolov5).  
+The original version was created based on YOLOv5(v6.1)
+
+### 安装
+
+在**Python>=3.7.0** 的环境中克隆版本仓并安装 requirements.txt，包括**PyTorch>=1.7**。
+
+```bash
+$ git clone https://github.com/iscyy/yoloair.git  # 克隆
+$ cd YOLOAir
+$ pip install -r requirements.txt  # 安装
+```
+
+### 训练
+
+```bash
+$ python train.py --data coco128.yaml --cfg configs/yolov5/yolov5s.yaml #默认为yolo
+```
+
+### 推理
+
+`detect.py` 在各种数据源上运行推理, 并将检测结果保存到 `runs/detect` 目录。
+
+```bash
+$ python detect.py --source 0  # 网络摄像头
+                          img.jpg  # 图像
+                          vid.mp4  # 视频
+                          path/  # 文件夹
+                          path/*.jpg  # glob
+```
+
+### 融合
+如果您使用不同模型来推理数据集，则可以使用 wbf.py文件 通过加权框融合来集成结果。
+您只需要在 wbf.py文件 中设置 img 路径和 txt 路径。
+```bash
+$ python wbf.py
+```
+______________________________________________________________________
+
+### 论文分享 <img title="" src="https://user-images.githubusercontent.com/48054808/157800467-2a9946ad-30d1-49a9-b9db-ba33413d9c90.png" alt="" width="20">
+
+FightingCV公众号每天分享前沿论文动态  
+(公众号回复加群,添加小助手加交流群)      
+______________________________________________________________________
+
+### Performance
+| Model                                                                                                | size<br><sup>(pixels) | mAP<sup>val<br>0.5:0.95 | mAP<sup>val<br>0.5 | Speed<br><sup>CPU b1<br>(ms) | Speed<br><sup>V100 b1<br>(ms) | Speed<br><sup>V100 b32<br>(ms) | params<br><sup>(M) | FLOPs<br><sup>@640 (B) | Weights
+|------------------------------------------------------------------------------------------------------|-----------------------|-------------------------|--------------------|------------------------------|-------------------------------|--------------------------------|--------------------|------------------------|------------------------|
+| YOLOv5n                   | 640                   | 28.0                    | 45.7               | **45**                       | **6.3**                       | **0.6**                        | **1.9**            | **4.5**                | [YOLOv5n](https://github.com/ultralytics/yolov5/releases/download/v6.1/yolov5n.pt)
+| YOLOv5s                   | 640                   | 37.4                    | 56.8               | 98                           | 6.4                           | 0.9                            | 7.2                | 16.5                   | [YOLOv5s](https://github.com/ultralytics/yolov5/releases/download/v6.1/yolov5s.pt)
+| YOLOv5m                   | 640                   | 45.4                    | 64.1               | 224                          | 8.2                           | 1.7                            | 21.2               | 49.0                   | [YOLOv5m](https://github.com/ultralytics/yolov5/releases/download/v6.1/yolov5m.pt)
+| YOLOv5l                   | 640                   | 49.0                    | 67.3               | 430                          | 10.1                          | 2.7                            | 46.5               | 109.1                  | [YOLOv5l](https://github.com/ultralytics/yolov5/releases/download/v6.1/yolov5l.pt)
+| YOLOv5x                   | 640                   | 50.7                    | 68.9               | 766                          | 12.1                          | 4.8                            | 86.7               | 205.7                  | [YOLOv5x](https://github.com/ultralytics/yolov5/releases/download/v6.1/yolov5x.pt)
+|                                                                                                      |                       |                         |                    |                              |                               |                                |                    |                        |
+| YOLOv5n6                 | 1280                  | 36.0                    | 54.4               | 153                          | 8.1                           | 2.1                            | 3.2                | 4.6                    |[YOLOv5n6](https://github.com/ultralytics/yolov5/releases/download/v6.1/yolov5n6.pt)
+| YOLOv5s6                 | 1280                  | 44.8                    | 63.7               | 385                          | 8.2                           | 3.6                            | 12.6               | 16.8                   |[YOLOv5s6](https://github.com/ultralytics/yolov5/releases/download/v6.1/yolov5s6.pt)
+| YOLOv5m6                 | 1280                  | 51.3                    | 69.3               | 887                          | 11.1                          | 6.8                            | 35.7               | 50.0                   |[YOLOv5m6](https://github.com/ultralytics/yolov5/releases/download/v6.1/yolov5m6.pt)
+| YOLOv5l6                 | 1280                  | 53.7                    | 71.3               | 1784                         | 15.8                          | 10.5                           | 76.8               | 111.4                  |[YOLOv5l6](https://github.com/ultralytics/yolov5/releases/download/v6.1/yolov5l6.pt)
+| YOLOv5x6<br>+ TTA | 1280<br>1536          | 55.0<br>**55.8**        | 72.7<br>**72.7**   | 3136<br>-                    | 26.2<br>-                     | 19.4<br>-                      | 140.7<br>-         | 209.8<br>-             |[YOLOv5x6](https://github.com/ultralytics/yolov5/releases/download/v6.1/yolov5x6.pt)
+
+<details><summary> <b>Expand</b> </summary>
+
+* The original version was created based on YOLOv5(6.1)
+
+</details>
+
+______________________________________________________________________
+
+| Model                                                                                                | size<br><sup>(pixels) | mAP<sup>val<br>0.5:0.95 | mAP<sup>val<br>0.5 | deconv kernel size<br><sup> | Speed<br><sup>V100 b1<br>(ms) | Speed<br><sup>V100 b32<br>(ms) | params<br><sup>(M) | FLOPs<br><sup>@640 (B) |
+|------------------------------------------------------------------------------------------------------|-----------------------|-------------------------|--------------------|------------------------------|-------------------------------|--------------------------------|--------------------|------------------------|
+| YOLOv5s                   | 640                   | 33.7                    | 52.9               | -                       | **5.6**                       | **2.2**                        | **7.23**            | **16.5**                |
+| YOLOv5s-deconv-exp1                   | 640                   | 33.4                    | 52.5               | 2                       | **5.6**                       | 2.4                        | 7.55            | 18.2                |
+| YOLOv5s-deconv-exp2                   | 640                   | **34.7**                    | **54.2**               | 4                           | 5.8                           | 2.5                            | 8.54                | 23.2                   |
+<details><summary> <b>Expand</b> </summary>
+
+* The training process depends on 4xV100 GPU
+```
+# train
+python -m torch.distributed.run --nproc_per_node 4 train.py --device 0,1,2,3 --data data/coco.yaml --hyp data/hyps/hyp.scratch-low.yaml  --cfg path/to/model.yaml --batch 512 --epochs 300 --weights ''
+# val
+python val.py --verbose --data data/coco.yaml --conf 0.001 --iou 0.65 --batch 1 --weights path/to/model.pt
+```
+* There is a gap between the mAP of YOLOv5s and the official one, here is just for comparison
+</details>
+
+______________________________________________________________________
+
+| Model                                                                                                | size<br><sup>(pixels) | mAP<sup>val<br>0.5:0.95 | mAP<sup>val<br>0.5 | params<br><sup>(M) | FLOPs<br><sup>@640 (B) |
+|------------------------------------------------------------------------------------------------------|-----------------------|-------------------------|--------------------------------|--------------------|------------------------|
+| YOLOv5s                   | 640                   | 37.4                       | 56.6                        | **7.226**            | **16.5**                |
+| YOLOv5s-deconv             | 640                   | **37.8**                       | **57.1**                        | 7.232            | **16.5**                |
+
+<details><summary> <b>Expand</b> </summary>
+
+* tested the 4x4 depthwise-separable deconv by setting the groups as input_channel
+* their params number and FLOPS are nearly the same while the new model's mAP is about 0.4 higher than the origin.
+</details>
+
+______________________________________________________________________
+
+| Model                                                                                                | size<br><sup>(pixels) | mAP<sup>val<br>0.5:0.95 | mAP<sup>val<br>0.5 | params<br><sup>(M) | FLOPs<br><sup>@640 (B) |
+|------------------------------------------------------------------------------------------------------|-----------------------|-------------------------|--------------------------------|--------------------|------------------------|
+| YOLOv5s                   | 640                   | 37.2                       | 56.0                        | **7.2**            | **16.5**                |
+| YOLOv5s-C3GC-backbone             | 640                   | **37.7**                       | **57.3**                        | 7.5            | 16.8                |
+
+<details><summary> <b>Expand</b> </summary>
+
+* The original version was created based on YOLOv5-6.0
+</details>
+
+______________________________________________________________________
+
+
+### YOLOv5教程✨
+与YOLOv5框架同步
+
+- [训练自定义数据](https://github.com/ultralytics/yolov5/wiki/Train-Custom-Data)  🚀 推荐
+- [获得最佳训练效果的技巧](https://github.com/ultralytics/yolov5/wiki/Tips-for-Best-Training-Results)  ☘️ 推荐
+- [使用 Weights & Biases 记录实验](https://github.com/ultralytics/yolov5/issues/1289)  🌟 新
+- [Roboflow：数据集、标签和主动学习](https://github.com/ultralytics/yolov5/issues/4975)  🌟 新
+- [多GPU训练](https://github.com/ultralytics/yolov5/issues/475)
+- [PyTorch Hub](https://github.com/ultralytics/yolov5/issues/36)  ⭐ 新
+- [TFLite, ONNX, CoreML, TensorRT 导出](https://github.com/ultralytics/yolov5/issues/251) 🚀
+- [测试时数据增强 (TTA)](https://github.com/ultralytics/yolov5/issues/303)
+- [模型集成](https://github.com/ultralytics/yolov5/issues/318)
+- [模型剪枝/稀疏性](https://github.com/ultralytics/yolov5/issues/304)
+- [超参数进化](https://github.com/ultralytics/yolov5/issues/607)
+- [带有冻结层的迁移学习](https://github.com/ultralytics/yolov5/issues/1314) ⭐ 新
+- [架构概要](https://github.com/ultralytics/yolov5/issues/6998) ⭐ 新
+
+______________________________________________________________________
+
+
+### 未来增强✨
+后续会持续建设和完善 YOLOAir 生态  
+完善集成更多 YOLOv5 系列模型，持续结合不同模块，构建更多不同网络模型  
+横向拓展和引入关联技术等等   
+
+______________________________________________________________________
+
+## Citation✨
+
+```python
+@article{2022yoloair,
+  title={{YOLOAir}: Makes improvements easy again},
+  author={iscyy},
+  repo={github https://github.com/iscyy/yoloair},
+  year={2022}
+}
+```
+
+## Statement
+<details><summary> <b>Expand</b> </summary>
+
+* The content of this site is only for sharing notes. If some content is infringing, please sending email.
+
+* If you have any question, please discuss with me by sending email.
+</details>
+
+## Acknowledgements
+
+<details><summary> <b>Expand</b> </summary>
+
+[https://github.com/ultralytics/yolov5](https://github.com/ultralytics/yolov5)  
+[https://github.com/ultralytics/yolov3](https://github.com/ultralytics/yolov3)  
+[https://github.com/WongKinYiu/PyTorch_YOLOv4](https://github.com/WongKinYiu/PyTorch_YOLOv4)  
+[https://github.com/WongKinYiu/ScaledYOLOv4](https://github.com/WongKinYiu/ScaledYOLOv4)   
+[https://github.com/meituan/YOLOv6](https://github.com/meituan/YOLOv6)  
+[https://github.com/WongKinYiu/yolov7](https://github.com/WongKinYiu/yolov7)  
+[https://github.com/WongKinYiu/yolor](https://github.com/WongKinYiu/yolor)   
+[https://github.com/xmu-xiaoma666/External-Attention-pytorch](https://github.com/xmu-xiaoma666/External-Attention-pytorch)  
+[https://gitee.com/SearchSource/yolov5_yolox](https://gitee.com/SearchSource/yolov5_yolox)  
+[https://github.com/Krasjet-Yu/YOLO-FaceV2](https://github.com/Krasjet-Yu/YOLO-FaceV2)  
+[https://github.com/positive666/yolov5_research/](https://github.com/positive666/yolov5_research)  
+[https://github.com/ppogg/YOLOv5-Lite](https://github.com/ppogg/YOLOv5-Lite)  
+[https://github.com/Gumpest/YOLOv5-Multibackbone](https://github.com/Gumpest/YOLOv5-Multibackbone-Compression)  
+
+</details>
